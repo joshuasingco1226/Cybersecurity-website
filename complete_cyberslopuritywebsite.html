@@ -1,0 +1,3151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOSH CYBERSECURITY SOLUTIONS :: Online Training, 1-on-1 Tutoring, Cisco Switch Syntax, Linux, Palo Alto & PQC</title>
+    <style>
+        /* ==========================================================================
+           CLASSIC WEB 1.0 / 2.0 DURGASOFT + MARS-NET "ROUGH ON THE EDGES" STYLESHEET
+           Strictly Standard Web-Safe Fonts, 0px Border Radius, Dense HTML Tables
+           ========================================================================== */
+        * {
+            box-sizing: border-box;
+            border-radius: 0px !important;
+        }
+
+        body {
+            margin: 0;
+            padding: 8px 8px 66px 8px;
+            background-color: #0e0714;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            line-height: 1.35;
+            color: #000000;
+            overflow-x: hidden;
+        }
+
+        /* ==========================================================================
+           FIXED BACKGROUND MINIGAME LAYER (RATHA YUDDHA 16-BIT TANK BATTLE)
+           ========================================================================== */
+        #bgMinigameViewport {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            background: radial-gradient(circle at center, #231130 0%, #09040e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        /* Decorative 16-Bit Indian Sandstone Wing Pillars on Wide Screens */
+        .bg-arcade-wing {
+            width: 220px;
+            height: 624px;
+            border: 3px solid #b8860b;
+            background: linear-gradient(180deg, #2a1215 0%, #14081c 100%);
+            color: #ffd700;
+            padding: 10px;
+            font-family: Tahoma, Verdana, sans-serif;
+            font-size: 11px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.9);
+            pointer-events: auto;
+        }
+        @media (max-width: 1120px) {
+            .bg-arcade-wing {
+                display: none;
+            }
+        }
+
+        #bgCanvasFrame {
+            position: relative;
+            width: min(88vh, 94vw);
+            height: min(88vh, 94vw);
+            max-width: 680px;
+            max-height: 680px;
+            border: 4px ridge #ffd700;
+            box-shadow: 0 0 40px rgba(255, 153, 51, 0.35), 0 0 0 3px #800000;
+            background-color: #120a18;
+            pointer-events: auto;
+        }
+
+        #bgTankCanvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+
+        /* Subtle CRT Scanline over Background Game */
+        .bg-crt-scanlines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
+
+        /* Floating Top-Center Restore Banner when Website is Minimized */
+        #minimizedFloatingHeader {
+            position: fixed;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 960;
+            background-color: #ffff00;
+            color: #cc0000;
+            border: 3px outset #ffffff;
+            box-shadow: 4px 4px 0px #000000;
+            padding: 6px 14px;
+            font-family: Tahoma, Arial, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            display: none;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
+        }
+
+        /* Fixed Bottom Win98 / DurgaSoft Background Arcade Control Taskbar */
+        #bgArcadeTaskbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 950;
+            background-color: #d4d0c8;
+            border-top: 3px outset #ffffff;
+            padding: 4px 8px;
+            font-family: Tahoma, Arial, sans-serif;
+            font-size: 11px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6px;
+            box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Main Centered 1190px Boxed Portal Wrapper (Layered Above BG Game) */
+        .portal-wrapper {
+            position: relative;
+            z-index: 10;
+            max-width: 1190px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 2px solid #000000;
+            box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.85);
+            transition: opacity 0.2s ease;
+        }
+
+        /* Glass / Ghost Transparency Modes so BG Game is Visible Through Tables */
+        .portal-wrapper.portal-glass {
+            opacity: 0.84;
+        }
+        .portal-wrapper.portal-ghost {
+            opacity: 0.28;
+        }
+        .portal-wrapper.portal-minimized {
+            display: none !important;
+        }
+
+        /* Classic Links */
+        a {
+            color: #0000cc;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        a:hover {
+            color: #ff0000;
+            background-color: #ffff00;
+            text-decoration: none;
+        }
+
+        /* Blinking Old-School Text & Badges */
+        @keyframes hardBlink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+        .blink-text {
+            animation: hardBlink 0.9s infinite;
+            font-weight: bold;
+        }
+
+        @keyframes bgFlash {
+            0%, 49% { background-color: #ff0000; color: #ffff00; }
+            50%, 100% { background-color: #ffff00; color: #cc0000; }
+        }
+        .flash-badge {
+            display: inline-block;
+            padding: 1px 4px;
+            font-family: Tahoma, Arial, sans-serif;
+            font-size: 10px;
+            font-weight: bold;
+            border: 1px solid #000000;
+            animation: bgFlash 1s infinite;
+            text-decoration: none;
+        }
+
+        /* Row 1: Top Maroon Contact Bar */
+        .top-contact-bar {
+            background-color: #800000;
+            color: #ffffff;
+            padding: 5px 8px;
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 11px;
+            font-weight: bold;
+            border-bottom: 2px solid #ffcc00;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Row 2: Main Header Banner */
+        .header-banner {
+            background: linear-gradient(180deg, #ffffff 0%, #fff8dc 60%, #ffeb99 100%);
+            padding: 10px 12px;
+            border-bottom: 3px solid #003366;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-title {
+            font-family: Impact, "Arial Black", Arial, sans-serif;
+            font-size: 32px;
+            color: #cc0000;
+            letter-spacing: 0.5px;
+            text-shadow: 2px 2px 0px #ffff00, 3px 3px 0px #000000;
+            margin: 0;
+            line-height: 1.05;
+        }
+
+        .logo-subtitle {
+            font-family: Tahoma, Geneva, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            color: #003366;
+            margin-top: 3px;
+            background-color: #ffff00;
+            border: 1px solid #cc0000;
+            padding: 2px 6px;
+            display: inline-block;
+        }
+
+        .header-promo-box {
+            background-color: #003366;
+            color: #ffffff;
+            border: 3px ridge #ffcc00;
+            padding: 6px 10px;
+            font-family: Verdana, sans-serif;
+            font-size: 11px;
+            text-align: center;
+            min-width: 310px;
+        }
+
+        /* Row 3: Tabular Navigation Bar */
+        .nav-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #003366;
+            border-bottom: 2px solid #000000;
+        }
+        .nav-table td {
+            border-right: 1px solid #ffffff;
+            text-align: center;
+            padding: 0;
+        }
+        .nav-table td:last-child {
+            border-right: none;
+        }
+        .nav-table a {
+            display: block;
+            padding: 8px 6px;
+            color: #ffffff;
+            font-family: Tahoma, Arial, sans-serif;
+            font-size: 11px;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .nav-table a:hover, .nav-table a.active-nav {
+            background-color: #cc0000;
+            color: #ffff00;
+        }
+
+        /* Row 4: Stacked Marquees */
+        .marquee-yellow {
+            background-color: #ffff00;
+            color: #cc0000;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 0;
+            border-bottom: 1px solid #cc0000;
+        }
+        .marquee-cyan {
+            background-color: #d9edf7;
+            color: #003366;
+            font-family: Tahoma, Arial, sans-serif;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 4px 0;
+            border-bottom: 2px solid #003366;
+        }
+
+        /* Row 5: 3-Column Portal Table Layout */
+        .portal-3col {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            width: 100%;
+        }
+        .col-left {
+            width: 215px;
+            flex-shrink: 0;
+            background-color: #f2f2f2;
+            border-right: 2px solid #003366;
+            padding: 6px;
+        }
+        .col-center {
+            flex: 1;
+            min-width: 0;
+            background-color: #ffffff;
+            padding: 8px;
+        }
+        .col-right {
+            width: 235px;
+            flex-shrink: 0;
+            background-color: #f2f2f2;
+            border-left: 2px solid #003366;
+            padding: 6px;
+        }
+
+        @media (max-width: 980px) {
+            .portal-3col {
+                flex-direction: column;
+            }
+            .col-left, .col-right {
+                width: 100%;
+                border-right: none;
+                border-left: none;
+                border-bottom: 2px solid #003366;
+            }
+        }
+
+        /* Sidebar Boxes */
+        .side-box {
+            border: 2px solid #003366;
+            background-color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .side-box-header-red {
+            background-color: #cc0000;
+            color: #ffff00;
+            font-family: Tahoma, Arial, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 5px 8px;
+            border-bottom: 2px solid #000000;
+            text-transform: uppercase;
+        }
+        .side-box-header-blue {
+            background-color: #003366;
+            color: #ffffff;
+            font-family: Tahoma, Arial, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 5px 8px;
+            border-bottom: 2px solid #000000;
+            text-transform: uppercase;
+        }
+        .side-box-header-green {
+            background-color: #006600;
+            color: #ffff00;
+            font-family: Tahoma, Arial, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 5px 8px;
+            border-bottom: 2px solid #000000;
+            text-transform: uppercase;
+        }
+        .side-box-header-purple {
+            background-color: #4b0082;
+            color: #ffffff;
+            font-family: Tahoma, Arial, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 5px 8px;
+            border-bottom: 2px solid #000000;
+            text-transform: uppercase;
+        }
+
+        .course-menu-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .course-menu-list li {
+            border-bottom: 1px dotted #888888;
+            background-color: #ffffe0;
+        }
+        .course-menu-list li:nth-child(even) {
+            background-color: #ffffff;
+        }
+        .course-menu-list a {
+            display: block;
+            padding: 5px 7px;
+            font-family: Verdana, sans-serif;
+            font-size: 11px;
+            font-weight: bold;
+            color: #003366;
+            text-decoration: none;
+        }
+        .course-menu-list a:hover {
+            background-color: #ff6600;
+            color: #ffffff;
+        }
+
+        /* Center Section Headers */
+        .section-bar-blue {
+            background: linear-gradient(180deg, #005599 0%, #003366 100%);
+            color: #ffffff;
+            border: 2px solid #000000;
+            padding: 6px 10px;
+            font-family: Tahoma, Arial, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 6px;
+        }
+        .section-bar-red {
+            background: linear-gradient(180deg, #dd0000 0%, #990000 100%);
+            color: #ffff00;
+            border: 2px solid #000000;
+            padding: 6px 10px;
+            font-family: Tahoma, Arial, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Classic Dense HTML Tables */
+        table.durga-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #003366;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 11px;
+            margin-bottom: 12px;
+        }
+        table.durga-table th {
+            background-color: #ffcc00;
+            color: #000000;
+            border: 1px solid #003366;
+            padding: 6px 5px;
+            font-weight: bold;
+            text-align: left;
+            font-size: 11px;
+        }
+        table.durga-table td {
+            border: 1px solid #666666;
+            padding: 5px 6px;
+            vertical-align: top;
+        }
+
+        /* Syntax & Command Reference Tables (Mars-Net Inspired) */
+        table.syntax-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #000000;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 11px;
+            margin-bottom: 14px;
+            background-color: #ffffff;
+        }
+        table.syntax-table th {
+            background-color: #d0d8e8;
+            color: #000000;
+            border: 1px solid #000000;
+            padding: 5px 6px;
+            font-weight: bold;
+            text-align: left;
+        }
+        table.syntax-table td {
+            border: 1px solid #444444;
+            padding: 5px 6px;
+            vertical-align: top;
+        }
+
+        .code-cmd {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 12px;
+            font-weight: bold;
+            background-color: #111111;
+            color: #00ff00;
+            padding: 3px 6px;
+            display: block;
+            border: 1px solid #555555;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        .prompt-tag {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 11px;
+            font-weight: bold;
+            color: #800000;
+            background-color: #fff0f0;
+            border: 1px solid #cc9999;
+            padding: 1px 4px;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        /* Classic Beveled Win98 / HTML 4.0 Buttons & Inputs */
+        .win-btn {
+            font-family: Tahoma, Arial, sans-serif;
+            font-size: 11px;
+            font-weight: bold;
+            background-color: #e0e0e0;
+            color: #000000;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #444444;
+            border-bottom: 2px solid #444444;
+            padding: 3px 8px;
+            cursor: pointer;
+        }
+        .win-btn:active {
+            border-top: 2px solid #444444;
+            border-left: 2px solid #444444;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+            background-color: #cccccc;
+        }
+        .win-btn-yellow {
+            background-color: #ffcc00;
+            color: #990000;
+        }
+        .win-btn-red {
+            background-color: #cc0000;
+            color: #ffff00;
+        }
+        .win-btn-green {
+            background-color: #008000;
+            color: #ffffff;
+        }
+
+        /* Folder Tabs for Cheat Sheets */
+        .tab-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px;
+            background-color: #d4d0c8;
+            padding: 5px;
+            border: 2px solid #000000;
+            border-bottom: none;
+        }
+        .folder-tab {
+            font-family: Tahoma, Arial, sans-serif;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 6px 10px;
+            border: 2px outset #ffffff;
+            background-color: #e4e4e4;
+            color: #000000;
+            cursor: pointer;
+        }
+        .folder-tab.active-tab {
+            background-color: #ffff00;
+            color: #cc0000;
+            border: 2px inset #888888;
+            text-decoration: underline;
+        }
+
+        .classic-input {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            padding: 3px 5px;
+            border: 2px inset #888888;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        /* Classic Win98 / PuTTY CLI Box */
+        .putty-window {
+            border: 3px outset #ffffff;
+            background-color: #c0c0c0;
+            padding: 3px;
+            margin-top: 14px;
+        }
+        .putty-titlebar {
+            background: linear-gradient(90deg, #000080 0%, #1084d0 100%);
+            color: #ffffff;
+            font-family: Tahoma, Arial, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 3px 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .putty-screen {
+            background-color: #000000;
+            color: #00ff00;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 12px;
+            padding: 8px;
+            height: 270px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            border: 2px inset #808080;
+        }
+
+        /* Troubleshooting Note Box */
+        .tshoot-box {
+            background-color: #fff8dc;
+            border: 2px dashed #cc0000;
+            padding: 7px 9px;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 11px;
+            margin-top: -8px;
+            margin-bottom: 14px;
+        }
+
+        /* Modal Overlay */
+        .classic-modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.65);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            padding: 10px;
+        }
+        .classic-modal-window {
+            background-color: #d4d0c8;
+            border: 3px outset #ffffff;
+            width: 100%;
+            max-width: 680px;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 6px 6px 0px #000000;
+        }
+    </style>
+</head>
+<body>
+
+<!-- =========================================================================
+     FIXED BACKGROUND MINIGAME LAYER: RATHA YUDDHA (16-BIT INDIAN TANK BATTLE)
+     ========================================================================= -->
+<div id="bgMinigameViewport">
+    <!-- Left Ornamental Telemetry Wing -->
+    <div class="bg-arcade-wing">
+        <div>
+            <div style="background:#cc0000; color:#ffff00; font-weight:bold; padding:4px; text-align:center; border:1px solid #ffff00; margin-bottom:8px;">
+                ☸ RATHA YUDDHA 16-BIT
+            </div>
+            <div style="color:#ffcc00; font-weight:bold; margin-bottom:4px;">BACKGROUND MINIGAME:</div>
+            <div style="color:#ffffff; font-size:10px; line-height:1.4; margin-bottom:8px;">
+                Defend the <b>Golden Lotus Sanctum</b> across 10 Indian Fortresses while studying Josh's Cybersecurity CLI sheets!
+            </div>
+            <table border="1" cellpadding="3" cellspacing="0" style="width:100%; border-collapse:collapse; font-size:10px; background:#1a0d22; color:#ffffff; border-color:#b8860b;">
+                <tr style="background:#4a1504; color:#ffff00; font-weight:bold;">
+                    <td colspan="2">ENEMY SQUADRONS</td>
+                </tr>
+                <tr><td>🟨 Scout Ratha</td><td>100 PTS</td></tr>
+                <tr><td>🟦 Striker Ashwa</td><td>200 PTS</td></tr>
+                <tr><td>🟪 Siege Agni</td><td>300 PTS</td></tr>
+                <tr><td>🟥 Vanguard Gaja</td><td>400 PTS</td></tr>
+            </table>
+        </div>
+
+        <div style="background:#000000; border:1px solid #ffd700; padding:6px;">
+            <div style="color:#00ff00; font-weight:bold; font-size:10px; margin-bottom:4px;">⚡ ACTIVE ASTRA BUFFS:</div>
+            <div id="bgWingBuffs" style="font-family:'Courier New',monospace; font-size:10px; color:#ffff00; min-height:42px;">
+                [AI AUTOPILOT ACTIVE]
+            </div>
+        </div>
+
+        <div style="font-size:10px; color:#ffcc99; border-top:1px dashed #b8860b; padding-top:6px;">
+            <b>1P Controls:</b><br>
+            • Move: <b>Arrow Keys / WASD</b><br>
+            • Fire: <b>SPACE / Z / J</b><br>
+            • Pause: <b>Key P</b>
+        </div>
+    </div>
+
+    <!-- Center 624x624 Pixel-Art Tank Arena -->
+    <div id="bgCanvasFrame">
+        <canvas id="bgTankCanvas" width="624" height="624"></canvas>
+        <div class="bg-crt-scanlines"></div>
+    </div>
+
+    <!-- Right Ornamental Telemetry Wing -->
+    <div class="bg-arcade-wing">
+        <div>
+            <div style="background:#003366; color:#ffff00; font-weight:bold; padding:4px; text-align:center; border:1px solid #00ffff; margin-bottom:8px;">
+                🏰 10-STAGE CAMPAIGN
+            </div>
+            <div style="color:#ffcc00; font-weight:bold; margin-bottom:4px;">CLICK STAGE TO WARP:</div>
+            <div id="bgWingStageButtons" style="display:grid; grid-template-columns: 1fr 1fr; gap:3px; margin-bottom:8px;">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <div style="background:#1a0d22; border:1px solid #b8860b; padding:6px; font-size:10px; color:#ffffff;">
+            <div style="color:#ffd700; font-weight:bold; margin-bottom:3px;">ASTRA RELIC DROPS:</div>
+            <div>☸ <b>Chakra:</b> Invulnerability</div>
+            <div>★ <b>Agni Star:</b> 3★ breaks Marble</div>
+            <div>💥 <b>Sudarshana:</b> Wipe Screen</div>
+            <div>⏳ <b>Kala:</b> Freeze Enemies</div>
+            <div>🧱 <b>Shovel:</b> Marble Sanctum</div>
+            <div>🏺 <b>Kalash:</b> +1 Arjuna Life</div>
+        </div>
+
+        <button class="win-btn win-btn-yellow" style="width:100%; padding:6px;" onclick="setPortalVisibility('solid')">
+            ⬆ SHOW FULL WEBSITE
+        </button>
+    </div>
+</div>
+
+<!-- Floating Top Banner Shown Only When Website is Minimized -->
+<div id="minimizedFloatingHeader">
+    <span class="flash-badge">FULL ARENA MODE</span>
+    <span>🎮 Playing <b>RATHA YUDDHA (16-Bit Indian Tank Battle)</b> — Use Arrow Keys / WASD + Spacebar!</span>
+    <button class="win-btn win-btn-red" onclick="setPortalVisibility('glass')">
+        ⬆ RESTORE JOSH'S CYBERSECURITY PORTAL (84% GLASS)
+    </button>
+    <button class="win-btn win-btn-green" onclick="setPortalVisibility('solid')">
+        ⬆ RESTORE 100% SOLID PORTAL
+    </button>
+</div>
+
+<div id="mainPortalWrapper" class="portal-wrapper portal-glass">
+
+    <!-- =====================================================================
+         ROW 1: DURGASOFT STYLE TOP MAROON CONTACT STRIP
+         ===================================================================== -->
+    <div class="top-contact-bar">
+        <div>
+            ☎ Ph: +1 (403) 555-0199 / +1 (587) 555-0144 &nbsp;|&nbsp;
+            ✉ Email: <span style="color:#ffff00;">josh.tutor@joshcyberacademy.ca</span> &nbsp;|&nbsp;
+            💬 Discord / Telegram: <span style="color:#00ffff;">@JoshCyberLab</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:6px;">
+            <span class="flash-badge">BG MINIGAME LIVE!</span>
+            <button class="win-btn win-btn-yellow" style="font-size:10px; padding:1px 6px;" onclick="setPortalVisibility('minimized')">
+                🎮 MINIMIZE SITE &amp; PLAY RATHA YUDDHA TANK GAME
+            </button>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         ROW 2: MAIN HEADER BANNER (LOGO LEFT + FLASHY CALLOUT TABLE RIGHT)
+         ===================================================================== -->
+    <div class="header-banner">
+        <div>
+            <div style="font-family: Verdana, sans-serif; font-size: 11px; font-weight: bold; color: #006600;">
+                WELCOME TO MR. JOSH'S OFFICIAL TECHNICAL TRAINING & SYNTAX PORTAL:
+            </div>
+            <h1 class="logo-title">JOSH CYBERSECURITY SOLUTIONS</h1>
+            <div class="logo-subtitle">
+                1-on-1 Live Tutoring &amp; Troubleshooting :: Linux Kernel | Palo Alto Cloud Sec | Post-Quantum Crypto | Cisco Switch CLI
+            </div>
+        </div>
+
+        <div class="header-promo-box">
+            <div style="background-color:#cc0000; color:#ffff00; font-weight:bold; padding:2px 4px; margin-bottom:4px; border:1px solid #ffff00;">
+                ★ ADMISSIONS OPEN FOR 2026 LIVE BATCHES ★
+            </div>
+            <div style="font-size:11px; color:#ffffff; margin-bottom:4px;">
+                <b>Direct SSH &amp; Console Access</b> to Cisco Catalyst IOS-XE,<br>
+                RHEL 9 Rescue VMs, PAN-OS 11.x &amp; OpenSSL 3.3 PQC Labs!
+            </div>
+            <button class="win-btn win-btn-yellow" onclick="openModal('booking', 'Free 30-Min 1-on-1 Live Demo with Josh')">
+                » CLICK HERE TO BOOK FREE 1-ON-1 DEMO «
+            </button>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         ROW 3: CLASSIC TABULAR HORIZONTAL NAVIGATION BAR
+         ===================================================================== -->
+    <div style="overflow-x:auto;">
+        <table class="nav-table">
+            <tr>
+                <td><a href="#top" class="active-nav" onclick="switchSyntaxTab('all')">HOME</a></td>
+                <td><a href="#batch-schedule">ONLINE BATCHES</a></td>
+                <td><a href="#quick-enquiry" onclick="openModal('booking', '1-on-1 Private Tutoring Slot')">1-ON-1 TUTORING</a></td>
+                <td><a href="#syntax-portal" onclick="switchSyntaxTab('cisco')">CISCO SWITCH SYNTAX</a></td>
+                <td><a href="#syntax-portal" onclick="switchSyntaxTab('linux')">LINUX TROUBLESHOOTING</a></td>
+                <td><a href="#syntax-portal" onclick="switchSyntaxTab('paloalto')">PALO ALTO CLOUD SEC</a></td>
+                <td><a href="#syntax-portal" onclick="switchSyntaxTab('pqc')">POST-QUANTUM CRYPTO</a></td>
+                <td><a href="#putty-simulator">LIVE CLI TERMINAL</a></td>
+                <td><a onclick="setPortalVisibility('minimized')" style="background-color:#ff6600; color:#ffff00;">🎮 PLAY BG TANK GAME</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- =====================================================================
+         ROW 4: STACKED CLASSIC <MARQUEE> TICKERS
+         ===================================================================== -->
+    <div class="marquee-yellow">
+        <marquee behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();">
+            *** <span class="blink-text" style="color:#0000cc;">[URGENT BATCH UPDATE]</span> NEW ONLINE &amp; 1-ON-1 BATCHES BY <b>MR. JOSH</b>: 
+            (1) <b>CISCO CATALYST SWITCH SYNTAXES, VLAN, STP, LACP &amp; ERR-DISABLED TROUBLESHOOTING</b> @ 6:00 PM MST &nbsp;|&nbsp;
+            (2) <b>LINUX TUTORIALS, GRUB2 RD.BREAK, SELINUX AVC &amp; LVM RESCUE</b> @ 7:30 PM MST &nbsp;|&nbsp;
+            (3) <b>PALO ALTO NGFW (PAN-OS 11.x PACKET-DIAG, IKEv2 VPN &amp; PRISMA CLOUD RQL)</b> @ 9:00 PM MST &nbsp;|&nbsp;
+            (4) <b>POST-QUANTUM CRYPTOGRAPHY (NIST FIPS 203 ML-KEM / KYBER &amp; FIPS 204 ML-DSA / DILITHIUM)</b> WEEKEND WORKSHOP ***
+        </marquee>
+    </div>
+
+    <div class="marquee-cyan">
+        <marquee behavior="scroll" direction="left" scrollamount="4" onmouseover="this.stop();" onmouseout="this.start();">
+            <span class="flash-badge">NEW!</span> Click any course tab below for full Mars-Net style CLI command tables &amp; verification commands! &nbsp;&nbsp;||&nbsp;&nbsp;
+            <a onclick="switchSyntaxTab('cisco')"><b>[View Cisco Switch IOS Command Sheet]</b></a> &nbsp;&nbsp;||&nbsp;&nbsp;
+            <a onclick="switchSyntaxTab('linux')"><b>[View Linux Boot, SELinux &amp; LVM Rescue Sheet]</b></a> &nbsp;&nbsp;||&nbsp;&nbsp;
+            <a onclick="switchSyntaxTab('paloalto')"><b>[View Palo Alto Dataplane Packet-Diag &amp; Prisma RQL Sheet]</b></a> &nbsp;&nbsp;||&nbsp;&nbsp;
+            <a onclick="switchSyntaxTab('pqc')"><b>[View NIST Post-Quantum OpenSSL 3.x Command Sheet]</b></a>
+        </marquee>
+    </div>
+
+    <!-- =====================================================================
+         ROW 5: CLASSIC 3-COLUMN PORTAL LAYOUT (LEFT + CENTER + RIGHT)
+         ===================================================================== -->
+    <div class="portal-3col">
+
+        <!-- =================================================================
+             LEFT SIDEBAR (215px) - COURSES OFFERED, MODES & PROMO BOX
+             ================================================================= -->
+        <aside class="col-left">
+
+            <!-- Box 1: Courses Offered -->
+            <div class="side-box">
+                <div class="side-box-header-red">» COURSES &amp; SYNTAX SHEETS</div>
+                <ul class="course-menu-list">
+                    <li><a onclick="switchSyntaxTab('cisco')">» Cisco Switch CLI &amp; Modes <span class="flash-badge">HOT</span></a></li>
+                    <li><a onclick="switchSyntaxTab('cisco')">» Cisco VLANs &amp; 802.1Q Trunks</a></li>
+                    <li><a onclick="switchSyntaxTab('cisco')">» Cisco STP (Rapid-PVST+)</a></li>
+                    <li><a onclick="switchSyntaxTab('cisco')">» Cisco EtherChannel (LACP/PAgP)</a></li>
+                    <li><a onclick="switchSyntaxTab('cisco')">» Cisco Port-Security &amp; Err-Disable</a></li>
+                    <li><a onclick="switchSyntaxTab('linux')">» Linux GRUB2 &amp; Root Rescue <span class="flash-badge">NEW</span></a></li>
+                    <li><a onclick="switchSyntaxTab('linux')">» Linux Systemd &amp; Journalctl</a></li>
+                    <li><a onclick="switchSyntaxTab('linux')">» Linux SELinux AVC Debugging</a></li>
+                    <li><a onclick="switchSyntaxTab('linux')">» Linux LVM2, Disk &amp; Inode Fix</a></li>
+                    <li><a onclick="switchSyntaxTab('linux')">» Linux ss, tcpdump &amp; nftables</a></li>
+                    <li><a onclick="switchSyntaxTab('paloalto')">» Palo Alto PAN-OS CLI Health</a></li>
+                    <li><a onclick="switchSyntaxTab('paloalto')">» Palo Alto Packet-Diag &amp; Drops <span class="flash-badge">LAB</span></a></li>
+                    <li><a onclick="switchSyntaxTab('paloalto')">» Palo Alto IPSec &amp; GlobalProtect</a></li>
+                    <li><a onclick="switchSyntaxTab('paloalto')">» Prisma Cloud RQL &amp; Twistlock</a></li>
+                    <li><a onclick="switchSyntaxTab('pqc')">» Post-Quantum FIPS 203 ML-KEM</a></li>
+                    <li><a onclick="switchSyntaxTab('pqc')">» Post-Quantum FIPS 204 ML-DSA</a></li>
+                    <li><a onclick="switchSyntaxTab('pqc')">» Hybrid TLS 1.3 (X25519MLKEM768)</a></li>
+                    <li><a onclick="switchSyntaxTab('all')" style="background-color:#ffcc00; color:#cc0000;">» SHOW ALL 4 COMMAND TABLES «</a></li>
+                </ul>
+            </div>
+
+            <!-- Box 2: Tutoring & Training Formats -->
+            <div class="side-box">
+                <div class="side-box-header-blue">» JOSH'S TRAINING MODES</div>
+                <div style="padding: 7px; font-size: 11px; background-color: #f9f9ff;">
+                    <ul style="margin: 0; padding-left: 16px; line-height: 1.55;">
+                        <li><b>1-on-1 Live Tutoring:</b> Personal Zoom + Shared SSH terminal with Mr. Josh.</li>
+                        <li><b>Emergency Break-Fix:</b> Stuck on a lab or work ticket? Book a 1-hour live fix session.</li>
+                        <li><b>Weekend Bootcamps:</b> Intensive Saturday/Sunday hands-on labs.</li>
+                        <li><b>Exam &amp; Job Prep:</b> CCNA, CCNP ENCOR, RHCSA, PCNSE &amp; Crypto interviews.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Box 3: Flashy Blinking Callout Box -->
+            <div style="background-color: #ffff99; border: 2px dashed #cc0000; padding: 8px; text-align: center; margin-bottom: 10px;">
+                <div class="blink-text" style="color: #cc0000; font-size: 12px; font-family: Tahoma, sans-serif;">
+                    ★ STUCK ON A BROKEN LAB? ★
+                </div>
+                <div style="font-size: 11px; color: #000000; margin: 5px 0;">
+                    Native VLAN mismatch? Kernel panic on boot? PAN-OS IPSec Phase-2 failing?
+                </div>
+                <button class="win-btn win-btn-red" style="width: 100%;" onclick="openModal('booking', 'Urgent 1-on-1 Lab Troubleshooting Session')">
+                    BOOK 1-HR LIVE FIX NOW!
+                </button>
+            </div>
+
+            <!-- Box 4: Direct Lab Server Status -->
+            <div class="side-box">
+                <div class="side-box-header-green">» LAB RACK STATUS (LIVE)</div>
+                <table border="1" cellpadding="4" cellspacing="0" style="width:100%; border-collapse:collapse; font-size:10px; font-family:'Courier New', monospace;">
+                    <tr style="background:#e6ffe6;">
+                        <td><b>CAT9300-SW1</b></td>
+                        <td style="color:#008000; font-weight:bold;">ONLINE (IOS 17.9)</td>
+                    </tr>
+                    <tr style="background:#ffffff;">
+                        <td><b>RHEL9-RESCUE</b></td>
+                        <td style="color:#008000; font-weight:bold;">ONLINE (5.14.0)</td>
+                    </tr>
+                    <tr style="background:#e6ffe6;">
+                        <td><b>PA-VM-5250</b></td>
+                        <td style="color:#008000; font-weight:bold;">ONLINE (PAN 11.1)</td>
+                    </tr>
+                    <tr style="background:#ffffff;">
+                        <td><b>OQS-PQC-CA</b></td>
+                        <td style="color:#008000; font-weight:bold;">ONLINE (SSL 3.3)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Box 5: Background Ratha Yuddha Minigame Quick Controller -->
+            <div class="side-box">
+                <div class="side-box-header-purple">» 🎮 BG MINIGAME: RATHA YUDDHA</div>
+                <div style="padding: 6px; background-color: #1a0f24; color: #ffffcc; font-size: 11px;">
+                    <div style="margin-bottom: 5px; color: #ffd700; font-weight: bold;">
+                        16-Bit Indian Tank Battle is running live behind this page!
+                    </div>
+                    <div style="display:flex; flex-direction:column; gap:4px;">
+                        <button class="win-btn win-btn-yellow" onclick="toggleTankControlMode(false); setPortalVisibility('minimized');">
+                            🎮 PLAY FULL SCREEN (1P)
+                        </button>
+                        <button class="win-btn win-btn-green" onclick="setPortalVisibility('ghost')">
+                            👁️ PEEK MODE (28% GHOST)
+                        </button>
+                        <button class="win-btn" onclick="setPortalVisibility('glass')">
+                            🪟 GLASS MODE (84% DEFAULT)
+                        </button>
+                        <button class="win-btn" onclick="setPortalVisibility('solid')">
+                            🧱 SOLID WEBSITE (100%)
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- =================================================================
+             CENTER MAIN COLUMN - BATCH SCHEDULE + MARS-NET COMMAND TABLES + PUTTY
+             ================================================================= -->
+        <main class="col-center">
+
+            <!-- 1. DURGASOFT SIGNATURE "UPCOMING BATCHES" DENSE HTML TABLE -->
+            <div id="batch-schedule">
+                <div class="section-bar-blue">
+                    <div>
+                        📅 NEW ONLINE BATCHES &amp; 1-ON-1 TUTORING SCHEDULE (FACULTY: MR. JOSH)
+                    </div>
+                    <div style="display:flex; gap:4px; align-items:center;">
+                        <span style="font-size:11px; color:#ffff00;">Filter Track:</span>
+                        <select id="batchFilterSelect" class="classic-input" style="font-size:11px; padding:1px 4px;" onchange="renderBatchTable()">
+                            <option value="ALL">-- All Tracks (8 Batches) --</option>
+                            <option value="CISCO">Cisco Switch Syntax &amp; Troubleshooting</option>
+                            <option value="LINUX">Linux Tutorials &amp; Kernel Rescue</option>
+                            <option value="PALOALTO">Palo Alto Cloud Security &amp; PAN-OS</option>
+                            <option value="PQC">Post-Quantum Cryptography (PQC)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style="overflow-x:auto;">
+                    <table class="durga-table" border="1" cellpadding="5" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th style="width:42px;">S.No</th>
+                                <th>Course Name / Live Lab Topic</th>
+                                <th style="width:95px;">Faculty</th>
+                                <th style="width:90px;">Start Date</th>
+                                <th style="width:110px;">Time (MST)</th>
+                                <th style="width:105px;">Join / Register</th>
+                                <th style="width:95px;">Syllabus / CLI</th>
+                            </tr>
+                        </thead>
+                        <tbody id="batchTableBody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 2. MARS-NET STYLE RAW SYNTAX, COMMANDS & TROUBLESHOOTING REFERENCE PORTAL -->
+            <div id="syntax-portal" style="margin-top: 14px;">
+                <div class="section-bar-red">
+                    <div>
+                        📖 COMPLETE CLI SYNTAX, COMMANDS &amp; TROUBLESHOOTING CHEAT SHEETS (MARS-NET STYLE)
+                    </div>
+                    <div style="display:flex; gap:4px; align-items:center;">
+                        <input
+                            type="text"
+                            id="cmdSearchBox"
+                            class="classic-input"
+                            placeholder="Search command (e.g. vlan, mlkem, selinux, packet-diag)..."
+                            style="width:240px; font-size:11px;"
+                            oninput="renderSyntaxTables()"
+                        >
+                        <button class="win-btn" onclick="document.getElementById('cmdSearchBox').value=''; renderSyntaxTables();">Clear</button>
+                    </div>
+                </div>
+
+                <!-- Old-School Folder Tab Strip -->
+                <div class="tab-strip">
+                    <button id="tabBtn-all" class="folder-tab active-tab" onclick="switchSyntaxTab('all')">
+                        [SHOW ALL 4 TRACKS]
+                    </button>
+                    <button id="tabBtn-cisco" class="folder-tab" onclick="switchSyntaxTab('cisco')">
+                        1. CISCO SWITCH SYNTAX &amp; TROUBLESHOOTING
+                    </button>
+                    <button id="tabBtn-linux" class="folder-tab" onclick="switchSyntaxTab('linux')">
+                        2. LINUX TUTORIALS &amp; KERNEL RESCUE
+                    </button>
+                    <button id="tabBtn-paloalto" class="folder-tab" onclick="switchSyntaxTab('paloalto')">
+                        3. PALO ALTO CLOUD SECURITY (PAN-OS &amp; PRISMA)
+                    </button>
+                    <button id="tabBtn-pqc" class="folder-tab" onclick="switchSyntaxTab('pqc')">
+                        4. POST-QUANTUM CRYPTOGRAPHY (NIST PQC)
+                    </button>
+                </div>
+
+                <!-- CLI Prompt Legend Strip -->
+                <div style="background-color:#ffffcc; border:2px solid #000000; border-bottom:none; padding:5px 8px; font-family:'Courier New', monospace; font-size:11px;">
+                    <b style="color:#cc0000; font-family:Tahoma, sans-serif;">PROMPT MODES:</b>
+                    <span class="prompt-tag">Switch&gt;</span> User EXEC &nbsp;|&nbsp;
+                    <span class="prompt-tag">Switch#</span> Privileged EXEC &nbsp;|&nbsp;
+                    <span class="prompt-tag">Switch(config)#</span> Global Config &nbsp;|&nbsp;
+                    <span class="prompt-tag">Switch(config-if)#</span> Interface &nbsp;|&nbsp;
+                    <span class="prompt-tag">root@rhel9:~#</span> Linux Root &nbsp;|&nbsp;
+                    <span class="prompt-tag">admin@PA-5250&gt;</span> PAN-OS
+                    <span id="copyStatusInline" style="float:right; background:#008000; color:#ffff00; padding:0 6px; font-family:Tahoma,sans-serif; font-weight:bold; display:none;">
+                        ✓ COPIED TO CLIPBOARD!
+                    </span>
+                </div>
+
+                <!-- Container where Raw HTML Command Tables Render -->
+                <div id="syntaxTablesContainer" style="border:2px solid #000000; padding:8px; background-color:#f7f7f7;">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- 3. CLASSIC PUTTY / WIN98 INTERACTIVE CLI LAB TESTER -->
+            <div id="putty-simulator" class="putty-window">
+                <div class="putty-titlebar">
+                    <div>
+                        💻 PuTTY_Lab_Terminal.exe - <span id="puttyTitleText">cisco-cat9300-core01 (IOS-XE 17.09)</span>
+                    </div>
+                    <div style="display:flex; gap:3px;">
+                        <button class="win-btn" style="padding:0 5px; font-size:10px;" onclick="clearPutty()">CLS</button>
+                    </div>
+                </div>
+
+                <!-- OS Selector & Preset Command Bar -->
+                <div style="background-color:#d4d0c8; padding:6px; border-bottom:2px groove #ffffff;">
+                    <div style="margin-bottom:5px; display:flex; flex-wrap:wrap; gap:4px; align-items:center;">
+                        <b style="font-family:Tahoma,sans-serif; font-size:11px; color:#000080;">SELECT LAB OS:</b>
+                        <button id="simBtn-cisco" class="win-btn win-btn-yellow" onclick="selectPuttyEnv('cisco')">1. Cisco Switch (Switch#)</button>
+                        <button id="simBtn-linux" class="win-btn" onclick="selectPuttyEnv('linux')">2. Linux Rescue (root@#)</button>
+                        <button id="simBtn-paloalto" class="win-btn" onclick="selectPuttyEnv('paloalto')">3. Palo Alto (admin@PA&gt;)</button>
+                        <button id="simBtn-pqc" class="win-btn" onclick="selectPuttyEnv('pqc')">4. OpenSSL PQC (josh@pqc$)</button>
+                    </div>
+                    <div style="display:flex; flex-wrap:wrap; gap:4px; align-items:center;">
+                        <b style="font-family:Tahoma,sans-serif; font-size:11px; color:#800000;">CLICK PRESET TROUBLESHOOTING CMD:</b>
+                        <span id="puttyPresetContainer" style="display:inline-flex; flex-wrap:wrap; gap:4px;"></span>
+                    </div>
+                </div>
+
+                <!-- Black Terminal Screen -->
+                <div id="puttyScreen" class="putty-screen"></div>
+
+                <!-- Command Input Row -->
+                <form onsubmit="submitPuttyCommand(event)" style="display:flex; gap:4px; padding:4px; background-color:#d4d0c8; align-items:center;">
+                    <span id="puttyPromptLabel" style="font-family:'Courier New',monospace; font-weight:bold; font-size:12px; color:#000080;">Switch#</span>
+                    <input
+                        type="text"
+                        id="puttyInput"
+                        class="classic-input"
+                        style="flex:1; font-family:'Courier New',monospace; font-weight:bold;"
+                        placeholder="Type a CLI command (or type 'help') and press Enter..."
+                        autocomplete="off"
+                    >
+                    <button type="submit" class="win-btn win-btn-green">EXECUTE COMMAND</button>
+                </form>
+
+                <!-- Josh's Tutor Diagnostic Explanation Panel -->
+                <div style="background-color:#ffffcc; border:2px inset #808080; padding:8px; margin:3px;">
+                    <div style="font-family:Tahoma,sans-serif; font-size:11px; font-weight:bold; color:#cc0000; border-bottom:1px solid #cc0000; padding-bottom:2px; margin-bottom:4px;">
+                        👨‍🏫 JOSH'S 1-ON-1 TUTOR EXPLANATION &amp; STEP-BY-STEP FIX: <span id="puttyTutorHeading" style="color:#003366;"></span>
+                    </div>
+                    <div id="puttyTutorBody" style="font-family:Verdana,sans-serif; font-size:11px; color:#000000;"></div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- =================================================================
+             RIGHT SIDEBAR (235px) - SCROLLING NEWS, ENQUIRY FORM & PERKS
+             ================================================================= -->
+        <aside class="col-right">
+
+            <!-- Box 1: Scrolling Latest News & Updates -->
+            <div class="side-box">
+                <div class="side-box-header-red">» LATEST UPDATES &amp; NEWS</div>
+                <div style="padding: 6px; background-color: #fffef0;">
+                    <marquee behavior="scroll" direction="up" scrollamount="2" height="175" onmouseover="this.stop();" onmouseout="this.start();">
+                        <div style="border-bottom: 1px dashed #cc0000; padding-bottom: 6px; margin-bottom: 6px; font-size: 11px;">
+                            <span class="flash-badge">NEW!</span> <b>Cisco Switch Cheat Sheet v4.2 Released:</b> Added complete LACP `(I)` vs `(s)` flag diagnosis and `switchport trunk allowed vlan add` safety rules.
+                        </div>
+                        <div style="border-bottom: 1px dashed #cc0000; padding-bottom: 6px; margin-bottom: 6px; font-size: 11px;">
+                            <span class="flash-badge">LAB!</span> <b>Post-Quantum NIST FIPS 203/204:</b> Live OpenSSL 3.3 + `oqsprovider` lab rack now supports `ML-KEM-768`, `ML-DSA-65`, and Hybrid TLS 1.3 `X25519MLKEM768`!
+                        </div>
+                        <div style="border-bottom: 1px dashed #cc0000; padding-bottom: 6px; margin-bottom: 6px; font-size: 11px;">
+                            <span class="flash-badge">HOT!</span> <b>Palo Alto Dataplane Packet-Diag:</b> Weekend workshop covering `show counter global filter packet-filter yes delta yes` and IKEv2 VPN debugging.
+                        </div>
+                        <div style="border-bottom: 1px dashed #cc0000; padding-bottom: 6px; margin-bottom: 6px; font-size: 11px;">
+                            <span class="flash-badge">RESCUE</span> <b>Linux RHCSA / Production Rescue:</b> Practice live GRUB2 `rd.break`, SELinux `restorecon`, and `lsof +L1` unlinked file recovery with Josh!
+                        </div>
+                    </marquee>
+                </div>
+            </div>
+
+            <!-- Box 2: Quick Enquiry / 1-on-1 Booking Form -->
+            <div id="quick-enquiry" class="side-box">
+                <div class="side-box-header-green">» QUICK 1-ON-1 ENQUIRY</div>
+                <form id="sidebarEnquiryForm" onsubmit="handleSidebarEnquiry(event)" style="padding: 7px; background-color: #f0fff0; font-size: 11px;">
+                    <div style="margin-bottom: 5px;">
+                        <b>Your Name *:</b><br>
+                        <input type="text" id="eqName" required class="classic-input" style="width:100%;" placeholder="Enter Full Name">
+                    </div>
+                    <div style="margin-bottom: 5px;">
+                        <b>Email / Phone / Discord *:</b><br>
+                        <input type="text" id="eqContact" required class="classic-input" style="width:100%;" placeholder="you@email.com / +1...">
+                    </div>
+                    <div style="margin-bottom: 5px;">
+                        <b>Select Course / Track *:</b><br>
+                        <select id="eqTrack" class="classic-input" style="width:100%;">
+                            <option value="Cisco Switch Syntaxes & Troubleshooting">Cisco Switch Syntaxes &amp; Fix</option>
+                            <option value="Linux Tutorials & Kernel Troubleshooting">Linux Tutorials &amp; Rescue</option>
+                            <option value="Palo Alto Cloud Security & PAN-OS CLI">Palo Alto Cloud Security</option>
+                            <option value="Post-Quantum Cryptography (NIST PQC)">Post-Quantum Cryptography</option>
+                            <option value="All-In-One 1-on-1 Mentorship">All-In-One 1-on-1 Mentorship</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 5px;">
+                        <b>Training Mode:</b><br>
+                        <select id="eqMode" class="classic-input" style="width:100%;">
+                            <option value="1-on-1 Private Tutoring">1-on-1 Private Tutoring</option>
+                            <option value="Urgent Lab Troubleshooting">Urgent Lab Troubleshooting</option>
+                            <option value="Online Weekend Batch">Online Weekend Batch</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 6px;">
+                        <b>Specific Topic / Lab Issue:</b><br>
+                        <textarea id="eqNotes" rows="3" class="classic-input" style="width:100%;" placeholder="e.g. VLAN trunking, SELinux, Packet-Diag, ML-KEM..."></textarea>
+                    </div>
+                    <button type="submit" class="win-btn win-btn-red" style="width:100%; padding:5px;">
+                        » SUBMIT ENQUIRY TO JOSH «
+                    </button>
+                </form>
+                <div id="sidebarEnquiryResult" style="display:none; padding:8px; background-color:#ffffcc; border-top:2px solid #006600; font-size:11px;"></div>
+            </div>
+
+            <!-- Box 3: Why Josh's Cybersecurity Academy -->
+            <div class="side-box">
+                <div class="side-box-header-purple">» WHY TRAIN WITH MR. JOSH?</div>
+                <div style="padding: 7px; font-size: 11px; background-color: #faf5ff;">
+                    <table border="0" cellpadding="2" cellspacing="0" style="width:100%; font-size:11px;">
+                        <tr><td style="color:#cc0000; font-weight:bold;">✔</td><td><b>Zero PPT Fluff:</b> 100% live terminal typing &amp; packet captures.</td></tr>
+                        <tr><td style="color:#cc0000; font-weight:bold;">✔</td><td><b>Real Break-Fix Labs:</b> We break real networks &amp; repair them together.</td></tr>
+                        <tr><td style="color:#cc0000; font-weight:bold;">✔</td><td><b>Raw Command Sheets:</b> Take home copy-pasteable CLI syntax tables.</td></tr>
+                        <tr><td style="color:#cc0000; font-weight:bold;">✔</td><td><b>Flexible 1-on-1 Pacing:</b> Slow down or speed up on any topic you choose.</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Box 4: Quick NIST PQC Key-Size Reference Mini-Table -->
+            <div class="side-box">
+                <div class="side-box-header-blue">» NIST PQC QUICK METRICS</div>
+                <table border="1" cellpadding="3" cellspacing="0" style="width:100%; border-collapse:collapse; font-size:10px; background:#ffffff;">
+                    <tr style="background:#ffcc00; font-weight:bold;">
+                        <td>Algorithm</td>
+                        <td>Pub Key</td>
+                        <td>CT / Sig</td>
+                    </tr>
+                    <tr>
+                        <td><b>ML-KEM-512</b></td>
+                        <td>800 B</td>
+                        <td>768 B</td>
+                    </tr>
+                    <tr style="background:#ffffcc;">
+                        <td><b>ML-KEM-768</b></td>
+                        <td>1,184 B</td>
+                        <td>1,088 B</td>
+                    </tr>
+                    <tr>
+                        <td><b>ML-KEM-1024</b></td>
+                        <td>1,568 B</td>
+                        <td>1,568 B</td>
+                    </tr>
+                    <tr style="background:#ffffcc;">
+                        <td><b>ML-DSA-65</b></td>
+                        <td>1,952 B</td>
+                        <td>3,309 B</td>
+                    </tr>
+                    <tr>
+                        <td><b>SLH-DSA-128f</b></td>
+                        <td>32 B</td>
+                        <td>17,088 B</td>
+                    </tr>
+                </table>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- =====================================================================
+         ROW 6: CLASSIC SOLID NAVY FOOTER
+         ===================================================================== -->
+    <footer style="background-color: #002244; color: #ffffff; border-top: 3px solid #ffcc00; padding: 10px 12px; font-family: Verdana, sans-serif; font-size: 11px;">
+        <div style="text-align: center; margin-bottom: 6px; font-weight: bold;">
+            <a onclick="switchSyntaxTab('all')" style="color:#ffff00;">Home</a> &nbsp;|&nbsp;
+            <a onclick="switchSyntaxTab('cisco')" style="color:#ffff00;">Cisco Switch Syntaxes &amp; Troubleshooting</a> &nbsp;|&nbsp;
+            <a onclick="switchSyntaxTab('linux')" style="color:#ffff00;">Linux Tutorials &amp; Kernel Rescue</a> &nbsp;|&nbsp;
+            <a onclick="switchSyntaxTab('paloalto')" style="color:#ffff00;">Palo Alto Cloud Security &amp; PAN-OS CLI</a> &nbsp;|&nbsp;
+            <a onclick="switchSyntaxTab('pqc')" style="color:#ffff00;">Post-Quantum Cryptography (FIPS 203/204/205)</a> &nbsp;|&nbsp;
+            <a href="#putty-simulator" style="color:#ffff00;">Live PuTTY Lab Simulator</a> &nbsp;|&nbsp;
+            <a onclick="openModal('booking', 'General 1-on-1 Tutoring Registration')" style="color:#00ffff;">Register for 1-on-1 Demo</a>
+        </div>
+        <div style="text-align: center; color: #cccccc; font-size: 10px;">
+            © 2026 <b>JOSH CYBERSECURITY SOLUTIONS (JOSH'S CYBERSECURITY ACADEMY)</b>. All Rights Reserved.<br>
+            Designed in Classic High-Density Portal Format (Inspired by DurgaSoft Training Schedules &amp; Mars-Net Command Syntax Reference Tables).
+        </div>
+    </footer>
+
+</div>
+
+<!-- =========================================================================
+     FIXED BOTTOM WIN98 / DURGASOFT BACKGROUND ARCADE TASKBAR
+     ========================================================================= -->
+<div id="bgArcadeTaskbar">
+    <!-- Left: Game Title & Control Mode Toggle -->
+    <div style="display:flex; align-items:center; gap:5px; flex-wrap:wrap;">
+        <span style="background:#800000; color:#ffff00; font-weight:bold; padding:3px 6px; border:1px solid #000000;">
+            ☸ BG ARCADE: RATHA YUDDHA
+        </span>
+        <button id="btnTaskbarControlMode" class="win-btn win-btn-yellow" onclick="toggleTankControlMode()">
+            🤖 MODE: AI AUTOPILOT (CLICK FOR 1P)
+        </button>
+        <select id="taskbarStageSelect" class="classic-input" style="font-size:11px; padding:2px 4px; font-weight:bold;" onchange="changeTankStage(this.value)">
+            <option value="0">Stage 01: Gateway of Jaipur</option>
+            <option value="1">Stage 02: Monsoon Canopy</option>
+            <option value="2">Stage 03: River Yamuna Crossing</option>
+            <option value="3">Stage 04: Red Fort Bastion</option>
+            <option value="4">Stage 05: Thar Desert Mirage</option>
+            <option value="5">Stage 06: Hampi Stone Ruins</option>
+            <option value="6">Stage 07: Palace of Winds</option>
+            <option value="7">Stage 08: Deccan Plateau Siege</option>
+            <option value="8">Stage 09: Golkonda Diamond Vault</option>
+            <option value="9">Stage 10: Imperial Citadel Finale</option>
+        </select>
+    </div>
+
+    <!-- Center: Live 16-Bit Tank Telemetry Counters -->
+    <div style="display:flex; align-items:center; gap:6px; background:#000000; color:#00ff00; font-family:'Courier New',monospace; font-size:11px; font-weight:bold; padding:3px 8px; border:2px inset #808080;">
+        <span>SCORE:<span id="tbScore" style="color:#ffff00;">000000</span></span> |
+        <span>LIVES:<span id="tbLives" style="color:#ff9933;">3</span></span> |
+        <span>AGNI:<span id="tbStars" style="color:#00ffff;">☆☆☆</span></span> |
+        <span>HOSTILES:<span id="tbHostiles" style="color:#ff4444;">20</span></span>
+    </div>
+
+    <!-- Right: Portal Opacity & Audio Controls -->
+    <div style="display:flex; align-items:center; gap:4px; flex-wrap:wrap;">
+        <b style="color:#000080;">VIEW:</b>
+        <button id="btnViewSolid" class="win-btn" onclick="setPortalVisibility('solid')" title="100% Opaque Website">100% Solid</button>
+        <button id="btnViewGlass" class="win-btn win-btn-yellow" onclick="setPortalVisibility('glass')" title="See BG Tank Battle Through Page">84% Glass</button>
+        <button id="btnViewGhost" class="win-btn" onclick="setPortalVisibility('ghost')" title="High Visibility BG Game">28% Ghost</button>
+        <button id="btnViewMin" class="win-btn win-btn-red" onclick="setPortalVisibility('minimized')" title="Minimize Website to Play Full Screen">👁️ Minimize Site (Full Game)</button>
+        <button id="btnTbSfx" class="win-btn" onclick="toggleTankSfx()">🔇 SFX: OFF</button>
+        <button id="btnTbMusic" class="win-btn" onclick="toggleTankMusic()">🔇 RAGA: OFF</button>
+        <button id="btnTbPause" class="win-btn" onclick="toggleTankPause()">⏯ PAUSE</button>
+    </div>
+</div>
+
+<!-- =========================================================================
+     CLASSIC WIN98 / HTML TABLE POPUP MODAL FOR REGISTRATION & SYLLABUS
+     ========================================================================= -->
+<div id="classicModalBackdrop" class="classic-modal-backdrop">
+    <div class="classic-modal-window">
+        <div class="putty-titlebar">
+            <span id="modalWindowTitle">JOSH CYBERSECURITY SOLUTIONS :: REGISTRATION / SYLLABUS</span>
+            <button class="win-btn win-btn-red" style="padding:0px 6px;" onclick="closeModal()">X</button>
+        </div>
+        <div id="modalWindowBody" style="padding: 12px; overflow-y: auto; font-family: Verdana, Arial, sans-serif; font-size: 12px; background-color: #ffffff; border: 2px inset #888888; margin: 4px;">
+            <!-- Populated by JS -->
+        </div>
+        <div style="padding: 6px 10px; text-align: right; background-color: #d4d0c8;">
+            <button class="win-btn" onclick="closeModal()">Close Window [ESC]</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    /*************************************************************************
+     * JOSH CYBERSECURITY SOLUTIONS - RAW DATA TABLES & SIMULATOR ENGINE
+     *************************************************************************/
+
+    // 1. DURGASOFT-STYLE BATCH SCHEDULE ROWS
+    const BATCH_ROWS = [
+        {
+            sno: "01",
+            track: "CISCO",
+            course: "Cisco Catalyst Switch Syntaxes, VLANs, 802.1Q Trunks & Err-Disabled Recovery",
+            badge: "NEW!",
+            faculty: "Mr. Josh",
+            date: "Nov 02, 2026",
+            time: "6:00 PM MST (Daily / 1-on-1)",
+            rowBg: "#ffffcc",
+            tabTarget: "cisco"
+        },
+        {
+            sno: "02",
+            track: "LINUX",
+            course: "Linux Administration & Rescue (GRUB2 rd.break, Systemd, SELinux AVC & LVM2)",
+            badge: "HOT!",
+            faculty: "Mr. Josh",
+            date: "Nov 03, 2026",
+            time: "7:30 PM MST (Daily / 1-on-1)",
+            rowBg: "#ffffff",
+            tabTarget: "linux"
+        },
+        {
+            sno: "03",
+            track: "PALOALTO",
+            course: "Palo Alto NGFW (PAN-OS 11.x CLI, Dataplane Packet-Diag & Global Drop Counters)",
+            badge: "LIVE LAB",
+            faculty: "Mr. Josh",
+            date: "Nov 04, 2026",
+            time: "9:00 PM MST (Daily / 1-on-1)",
+            rowBg: "#e6ffe6",
+            tabTarget: "paloalto"
+        },
+        {
+            sno: "04",
+            track: "PQC",
+            course: "Post-Quantum Cryptography (NIST FIPS 203 ML-KEM, FIPS 204 ML-DSA & Hybrid TLS 1.3)",
+            badge: "NIST PQC",
+            faculty: "Mr. Josh",
+            date: "Nov 07, 2026",
+            time: "10:00 AM MST (Sat/Sun Workshop)",
+            rowBg: "#ffe6f2",
+            tabTarget: "pqc"
+        },
+        {
+            sno: "05",
+            track: "CISCO",
+            course: "Cisco Spanning Tree (Rapid-PVST+, PortFast, BPDU Guard) & LACP EtherChannel Fix",
+            badge: "1-ON-1",
+            faculty: "Mr. Josh",
+            date: "Flexible",
+            time: "Custom 1-on-1 Slot",
+            rowBg: "#ffffcc",
+            tabTarget: "cisco"
+        },
+        {
+            sno: "06",
+            track: "PALOALTO",
+            course: "Palo Alto Prisma Cloud (CSPM RQL Threat Hunting, CWPP Twistlock & IPSec VPNs)",
+            badge: "CLOUD",
+            faculty: "Mr. Josh",
+            date: "Nov 08, 2026",
+            time: "2:00 PM MST (Weekend Batch)",
+            rowBg: "#ffffff",
+            tabTarget: "paloalto"
+        },
+        {
+            sno: "07",
+            track: "LINUX",
+            course: "Linux Network & Packet Forensics (ss, iproute2, tcpdump BPF, nftables & strace)",
+            badge: "NEW!",
+            faculty: "Mr. Josh",
+            date: "Nov 09, 2026",
+            time: "5:00 PM MST (Evening / 1-on-1)",
+            rowBg: "#e6ffe6",
+            tabTarget: "linux"
+        },
+        {
+            sno: "08",
+            track: "PQC",
+            course: "Enterprise PQC Migration: OpenSSL 3.3 oqsprovider, X.509 PKI & TCP Fragmentation Fix",
+            badge: "1-ON-1",
+            faculty: "Mr. Josh",
+            date: "Flexible",
+            time: "On-Demand Lab Booking",
+            rowBg: "#ffe6f2",
+            tabTarget: "pqc"
+        }
+    ];
+
+    // 2. MARS-NET STYLE RAW SYNTAX & TROUBLESHOOTING TABLES
+    const SYNTAX_SECTIONS = [
+        // ==================== TRACK 1: CISCO SWITCH SYNTAXES & TROUBLESHOOTING ====================
+        {
+            track: "cisco",
+            headerBg: "#004d00",
+            title: "TABLE 1A :: CISCO CATALYST SWITCH INITIAL HARDENING, CLI MODES & SSHv2 SYNTAX",
+            subtitle: "Standard IOS / IOS-XE hierarchy from User EXEC (Switch>) to Interface Configuration (Switch(config-if)#)",
+            rows: [
+                { prompt: "Switch>", cmd: "enable", desc: "Enter Privileged EXEC mode (Switch#)." },
+                { prompt: "Switch#", cmd: "configure terminal", desc: "Enter Global Configuration mode (Switch(config)#)." },
+                { prompt: "Switch(config)#", cmd: "hostname CAT9300-SW1\nno ip domain-lookup", desc: "Set switch hostname and prevent mistyped commands from hanging on DNS broadcast lookup." },
+                { prompt: "Switch(config)#", cmd: "enable secret JoshCyber#2026\nservice password-encryption", desc: "Set Type-8/Type-9 hashed enable secret and encrypt all plaintext passwords in running-config." },
+                { prompt: "Switch(config)#", cmd: "ip domain-name lab.joshcyber.ca\ncrypto key generate rsa modulus 2048\nip ssh version 2", desc: "Generate 2048-bit RSA keypair and enforce SSHv2 only (disables vulnerable SSHv1)." },
+                { prompt: "Switch(config)#", cmd: "username admin privilege 15 secret AdminPass#99\nline vty 0 15\n transport input ssh\n login local", desc: "Create level-15 local admin user and lock virtual terminal lines strictly to SSH." },
+                { prompt: "Switch(config)#", cmd: "interface vlan 10\n ip address 10.10.10.2 255.255.255.0\n no shutdown\nexit\nip default-gateway 10.10.10.1", desc: "Configure Management SVI (Switched Virtual Interface) and default gateway." },
+                { prompt: "Switch#", cmd: "copy running-config startup-config", desc: "Save active configuration to NVRAM (Shortcut: write memory / wr)." }
+            ],
+            tshoot: "<b>TROUBLESHOOTING SSH & SVI DOWN/DOWN:</b> If `show ip interface brief` shows `Vlan10` is `up/down` (line protocol down), it means NO active physical access or trunk port is currently forwarding in VLAN 10 (`show vlan brief`), or VLAN 10 does not exist in the VLAN database!"
+        },
+        {
+            track: "cisco",
+            headerBg: "#004d00",
+            title: "TABLE 1B :: CISCO SWITCH VLANS, ACCESS PORTS, 802.1Q TRUNKING & NATIVE VLAN SYNTAX",
+            subtitle: "Creating Layer-2 VLANs, assigning static access/voice ports, and configuring 802.1Q inter-switch trunks",
+            rows: [
+                { prompt: "Switch(config)#", cmd: "vlan 10\n name USERS_DATA\nvlan 20\n name VOIP_PHONES\nvlan 999\n name NATIVE_UNUSED", desc: "Create VLANs 10, 20, and 999 in the switch VLAN database." },
+                { prompt: "Switch(config)#", cmd: "interface range GigabitEthernet1/0/1 - 12\n switchport mode access\n switchport access vlan 10\n switchport voice vlan 20\n spanning-tree portfast\n no shutdown", desc: "Configure ports 1–12 as static access ports in VLAN 10 with auxiliary Voice VLAN 20 for Cisco IP Phones." },
+                { prompt: "Switch(config)#", cmd: "interface GigabitEthernet1/0/24\n switchport trunk encapsulation dot1q\n switchport mode trunk\n switchport nonegotiate", desc: "Configure uplink as unconditional 802.1Q trunk and disable DTP (Dynamic Trunking Protocol) frames." },
+                { prompt: "Switch(config-if)#", cmd: "switchport trunk native vlan 999\nswitchport trunk allowed vlan 10,20,30", desc: "Move untagged Native VLAN off VLAN 1 to VLAN 999 and prune trunk to VLANs 10, 20, 30." },
+                { prompt: "Switch(config-if)#", cmd: "switchport trunk allowed vlan add 40", desc: "CRITICAL PRODUCTION RULE: Always use the 'add' keyword so you don't overwrite existing VLANs!" },
+                { prompt: "Switch#", cmd: "show vlan brief\nshow interfaces trunk\nshow interfaces Gi1/0/24 switchport", desc: "Verify active VLANs, trunk encapsulation, native VLAN, and spanning-tree forwarding list." }
+            ],
+            tshoot: "<b>TROUBLESHOOTING TRUNK OUTAGES & NATIVE VLAN MISMATCH:</b><br>1. Running `switchport trunk allowed vlan 40` WITHOUT `add` wipes out VLANs 10, 20, 30 and causes an immediate outage!<br>2. `%CDP-4-NATIVE_VLAN_MISMATCH`: Both switches on a trunk link MUST have the exact same `switchport trunk native vlan X` configured, otherwise STP puts the VLAN into `PVID_Inc` (Broken/Blocking) state."
+        },
+        {
+            track: "cisco",
+            headerBg: "#004d00",
+            title: "TABLE 1C :: SPANNING TREE (RAPID-PVST+), ETHERCHANNEL (LACP/PAgP), PORT-SECURITY & ERR-DISABLED FIX",
+            subtitle: "Loop prevention, deterministic Root Bridge placement, link aggregation bundles, and layer-2 port locking",
+            rows: [
+                { prompt: "Switch(config)#", cmd: "spanning-tree mode rapid-pvst\nspanning-tree vlan 10,20 root primary\nspanning-tree vlan 30,40 root secondary", desc: "Enable 802.1w Rapid-PVST+ and force this switch to be Root Bridge for VLANs 10 & 20." },
+                { prompt: "Switch(config-if)#", cmd: "spanning-tree portfast\nspanning-tree bpduguard enable", desc: "Enable immediate Forwarding on access ports and err-disable the port if a rogue switch sends a BPDU." },
+                { prompt: "Switch(config)#", cmd: "interface range Gi1/0/21 - 22\n channel-group 1 mode active\nexit\ninterface Port-channel 1\n switchport mode trunk", desc: "Bundle Gi1/0/21-22 into LACP (802.3ad) Port-Channel 1. (Modes: active/passive = LACP; desirable/auto = PAgP; on = Static)." },
+                { prompt: "Switch(config-if)#", cmd: "switchport mode access\nswitchport port-security\nswitchport port-security maximum 2\nswitchport port-security mac-address sticky\nswitchport port-security violation restrict", desc: "Enable Port-Security allowing max 2 sticky MAC addresses; drop & log rogue MAC frames without shutting port down." },
+                { prompt: "Switch#", cmd: "show spanning-tree vlan 10\nshow etherchannel summary\nshow port-security interface Gi1/0/5\nshow interfaces status err-disabled", desc: "Master verification commands for STP Root, LACP flags (SU/SD/P/I/s), violation counters, and err-disabled reasons." },
+                { prompt: "Switch(config)#", cmd: "errdisable recovery cause psecure-violation\nerrdisable recovery cause bpduguard\nerrdisable recovery interval 60", desc: "Enable automatic recovery of err-disabled switchports after 60 seconds." }
+            ],
+            tshoot: "<b>DECODING `show etherchannel summary` FLAGS:</b><br>• `Po1(SU)` = Layer-2 (`S`) In-Use (`U`) — Healthy! Member ports show `(P)` (Bundled).<br>• `Po1(SD)` = Layer-2 Down (`D`). If members show `(I)` (Stand-alone), the remote switch does not have LACP enabled. If members show `(s)` (Suspended), there is a mismatch in Allowed VLANs, Native VLAN, Speed, or Duplex!"
+        },
+
+        // ==================== TRACK 2: LINUX TUTORIALS & KERNEL TROUBLESHOOTING ====================
+        {
+            track: "linux",
+            headerBg: "#800000",
+            title: "TABLE 2A :: LINUX GRUB2 BOOT RESCUE, SYSTEMD SERVICE DEBUGGING & SELINUX AVC TROUBLESHOOTING",
+            subtitle: "RHEL / Rocky / AlmaLinux / Ubuntu emergency recovery, root password reset, and SELinux context repair",
+            rows: [
+                { prompt: "GRUB2-Boot-Menu>", cmd: "rd.break enforcing=0", desc: "Append to the 'linux' kernel line in GRUB2 (press 'e' on boot, then Ctrl+X) to interrupt initramfs before pivot_root." },
+                { prompt: "switch_root:/#", cmd: "mount -o remount,rw /sysroot\nchroot /sysroot\npasswd root\ntouch /.autorelabel\nexit\nexit", desc: "Remount OS root read-write, reset forgotten root password, and trigger mandatory SELinux `/etc/shadow` relabel." },
+                { prompt: "root@rhel9:~#", cmd: "systemctl --failed\nsystemctl status sshd.service -l\njournalctl -xeu nginx.service --no-pager", desc: "List failed systemd units and inspect detailed process exit codes and error logs." },
+                { prompt: "root@rhel9:~#", cmd: "getenforce\nausearch -m AVC,USER_AVC -ts recent\nsealert -a /var/log/audit/audit.log", desc: "Verify SELinux mode and query audit log for recent Mandatory Access Control denials." },
+                { prompt: "root@rhel9:~#", cmd: "ls -laZ /var/www/html\nsemanage fcontext -a -t httpd_sys_content_t '/srv/web(/.*)?'\nrestorecon -Rv /srv/web", desc: "Inspect SELinux file labels (`user:role:type:level`), define persistent policy rule, and relabel directory recursively." },
+                { prompt: "root@rhel9:~#", cmd: "semanage port -l | grep http\nsemanage port -a -t http_port_t -p tcp 8081\nsetsebool -P httpd_can_network_connect on", desc: "Allow Apache/Nginx to bind to non-standard TCP port 8081 and make outbound reverse-proxy connections." }
+            ],
+            tshoot: "<b>TROUBLESHOOTING EMERGENCY MODE ON BOOT:</b> If a typo in `/etc/fstab` drops the server into `Give root password for maintenance`, log in, run `mount -o remount,rw /`, run `mount -a` to spot the broken line/UUID (compare against `blkid`), fix `/etc/fstab`, and run `systemctl daemon-reload`!"
+        },
+        {
+            track: "linux",
+            headerBg: "#800000",
+            title: "TABLE 2B :: LINUX LVM2 ONLINE EXPANSION, DISK/INODE EXHAUSTION, NETWORK SOCKETS & PACKET CAPTURE",
+            subtitle: "Zero-downtime volume resizing, hunting unlinked open files, socket inspection, and tcpdump BPF filters",
+            rows: [
+                { prompt: "root@rhel9:~#", cmd: "pvs && vgs && lvs\nlsblk -f", desc: "Display Physical Volumes, Volume Groups, Logical Volumes, and filesystem UUIDs/types." },
+                { prompt: "root@rhel9:~#", cmd: "pvcreate /dev/sdb\nvgextend vg_data /dev/sdb\nlvextend -l +100%FREE -r /dev/mapper/vg_data-lv_app", desc: "Add new disk `/dev/sdb` to Volume Group and expand Logical Volume + XFS/EXT4 filesystem online (`-r`)!" },
+                { prompt: "root@rhel9:~#", cmd: "df -hT\ndf -i\nlsof +L1", desc: "Check block usage (`-hT`), inode table exhaustion (`-i`), and deleted files held open by active processes (`+L1`)." },
+                { prompt: "root@rhel9:~#", cmd: "ss -tulpn\nip -br addr show\nip route get 8.8.8.8", desc: "Inspect listening TCP/UDP sockets with PIDs, interface IPs, and exact kernel route selection." },
+                { prompt: "root@rhel9:~#", cmd: "tcpdump -nn -i any 'tcp port 443 and host 10.10.1.50' -vv -w capture.pcap", desc: "Capture raw network packets without DNS resolution (`-nn`) into a Wireshark PCAP file." },
+                { prompt: "root@rhel9:~#", cmd: "strace -p 3104 -f -T -e trace=network,file\niotop -oP\ndmesg -T | grep -i -E 'oom|killed|error'", desc: "Trace live system calls on a hung PID, check active disk I/O processes, and inspect kernel OOM-killer logs." }
+            ],
+            tshoot: "<b>WHY `rm` DIDN'T FREE DISK SPACE:</b> When you delete a huge log file (`rm /var/log/app.log`) while the daemon still has it open, `df -h` stays at 100%! Run `lsof +L1` to find the PID and File Descriptor (`FD`), then zero it out safely without restarting the service: `: > /proc/<PID>/fd/<FD>`."
+        },
+
+        // ==================== TRACK 3: PALO ALTO CLOUD SECURITY & PAN-OS CLI ====================
+        {
+            track: "paloalto",
+            headerBg: "#003366",
+            title: "TABLE 3A :: PALO ALTO PAN-OS CLI, SESSION TABLE, POLICY MATCH TEST & DATAPLANE PACKET-DIAG",
+            subtitle: "Separating Management Plane vs Dataplane CPU, testing rules via CLI, and isolating dropped packets",
+            rows: [
+                { prompt: "admin@PA-5250>", cmd: "show system info\nshow system resources\nshow running resource-monitor second last 10", desc: "Compare Management Plane CPU (`show system resources`) vs Dataplane Packet CPU (`resource-monitor`)." },
+                { prompt: "admin@PA-5250>", cmd: "test security-policy-match source 10.1.1.50 destination 172.16.5.10 protocol 6 destination-port 443 application ssl\ntest routing fib-lookup virtual-router default ip 172.16.5.10", desc: "Simulate packet flow to verify which Security Policy rule and FIB route will match." },
+                { prompt: "admin@PA-5250>", cmd: "show session all filter source 10.1.1.50\nshow session id 148920\nclear session all filter source 10.1.1.50", desc: "Inspect active session c2s/s2c legs, NAT translations, App-ID, and clear cached sessions after policy edits." },
+                { prompt: "admin@PA-5250>", cmd: "debug dataplane packet-diag clear all\ndebug dataplane packet-diag set filter match source 10.1.1.50 destination 172.16.5.10\ndebug dataplane packet-diag set filter on", desc: "Configure pre-parse dataplane packet filter before running captures or delta counters." },
+                { prompt: "admin@PA-5250>", cmd: "show counter global filter packet-filter yes delta yes", desc: "GOLD STANDARD COMMAND: Run twice during test traffic to see exact real-time drop counters matching your filter!" },
+                { prompt: "admin@PA-5250>", cmd: "debug dataplane packet-diag set capture stage drop file drop.pcap\ndebug dataplane packet-diag set capture stage receive file rx.pcap\ndebug dataplane packet-diag set capture on", desc: "Capture packets across dataplane stages (`receive`, `firewall`, `transmit`, `drop`). Turn off with `set capture off`." }
+            ],
+            tshoot: "<b>TROUBLESHOOTING `application: incomplete` OR `insufficient-data`:</b><br>• `incomplete`: The TCP 3-way handshake never completed (check return routing, asymmetric paths, or upstream ISP blocks).<br>• `insufficient-data`: TCP handshake succeeded, but not enough Layer-7 payload bytes arrived to classify the App-ID."
+        },
+        {
+            track: "paloalto",
+            headerBg: "#003366",
+            title: "TABLE 3B :: PALO ALTO IPSEC VPN DEBUGGING & PRISMA CLOUD (CSPM RQL / CWPP TWISTLOCK)",
+            subtitle: "IKEv2 Phase-1/Phase-2 tunnel diagnostics and Prisma Cloud Resource Query Language (RQL) hunting",
+            rows: [
+                { prompt: "admin@PA-5250>", cmd: "show vpn ike-sa gateway AWS-VPC-GW\nshow vpn ipsec-sa tunnel AWS-TUNNEL-1\nshow vpn flow name AWS-TUNNEL-1", desc: "Verify Phase-1 IKE SA, Phase-2 IPSec SPIs, and live ESP encapsulation/decapsulation packet counters." },
+                { prompt: "admin@PA-5250>", cmd: "test vpn ike-sa gateway AWS-VPC-GW\ntest vpn ipsec-sa tunnel AWS-TUNNEL-1\nless mp-log ikemgr.log", desc: "Force IKE/IPSec negotiation and read `ikemgr.log` for `AUTH_FAILED`, `NO_PROPOSAL_CHOSEN`, or `TS_UNACCEPTABLE`." },
+                { prompt: "Prisma-RQL>", cmd: "config from cloud.resource where cloud.type = 'aws' AND api.name = 'aws-s3api-get-bucket-acl' AND json.rule = 'acl.grants[?(@.grantee.uri==\"http://acs.amazonaws.com/groups/global/AllUsers\")] exists'", desc: "Prisma Cloud CSPM RQL query to detect publicly readable AWS S3 buckets." },
+                { prompt: "Prisma-RQL>", cmd: "config from cloud.resource where api.name = 'aws-ec2-describe-security-groups' AND json.rule = 'ipPermissions[?(@.toPort == 22)].ipRanges[*] contains 0.0.0.0/0'", desc: "Prisma Cloud RQL query to find AWS Security Groups exposing SSH (TCP/22) to 0.0.0.0/0." },
+                { prompt: "root@k8s-node:~#", cmd: "twistcli images scan --address https://prisma-console:8083 --user admin --details myrepo/payment-api:v1.4", desc: "Prisma Cloud Compute (Twistlock) CLI scan for container CVEs and compliance defects." }
+            ],
+            tshoot: "<b>DECODING `ikemgr.log` VPN FAILURES:</b><br>• `NO_PROPOSAL_CHOSEN`: Phase-1 or Phase-2 Crypto Profile mismatch (Encryption/Hash/DH Group).<br>• `TS_UNACCEPTABLE`: Phase-2 Proxy-ID (local/remote subnet traffic selector) mismatch between Palo Alto and remote peer."
+        },
+
+        // ==================== TRACK 4: POST-QUANTUM CRYPTOGRAPHY (NIST PQC) ====================
+        {
+            track: "pqc",
+            headerBg: "#4b0082",
+            title: "TABLE 4A :: NIST POST-QUANTUM CRYPTOGRAPHY (FIPS 203 ML-KEM, FIPS 204 ML-DSA & FIPS 205 SLH-DSA)",
+            subtitle: "OpenSSL 3.3+ CLI commands for quantum-resistant key generation, KEM encapsulation, digital signatures, and Hybrid TLS 1.3",
+            rows: [
+                { prompt: "josh@pqc-lab:~$", cmd: "openssl list -kem-algorithms -provider oqsprovider\nopenssl list -signature-algorithms -provider oqsprovider", desc: "List all active NIST Post-Quantum KEM and Digital Signature algorithms in OpenSSL 3.x." },
+                { prompt: "josh@pqc-lab:~$", cmd: "openssl genpkey -algorithm mlkem768 -out mlkem768_priv.pem\nopenssl pkey -in mlkem768_priv.pem -pubout -out mlkem768_pub.pem", desc: "Generate NIST FIPS 203 ML-KEM-768 (Kyber-768, Level 3) private key (2,400B) and public key (1,184B)." },
+                { prompt: "josh@pqc-lab:~$", cmd: "openssl pkeyutl -encap -inkey mlkem768_pub.pem -out ciphertext.bin -secret shared_alice.bin\nopenssl pkeyutl -decap -inkey mlkem768_priv.pem -in ciphertext.bin -secret shared_bob.bin", desc: "Encapsulate a 32-byte quantum-safe shared secret into `ciphertext.bin` (1,088B) and decapsulate with private key." },
+                { prompt: "josh@pqc-lab:~$", cmd: "openssl genpkey -algorithm mldsa65 -out mldsa65_ca.key\nopenssl req -x509 -new -key mldsa65_ca.key -out pqc_root_ca.crt -days 3650 -subj '/CN=Josh-PQC-Root-CA'", desc: "Generate NIST FIPS 204 ML-DSA-65 (Dilithium3) signing key and mint a Post-Quantum X.509 Root CA certificate." },
+                { prompt: "josh@pqc-lab:~$", cmd: "openssl dgst -sign mldsa65_ca.key -out release.sig release.tar.gz\nopenssl dgst -verify <(openssl pkey -in mldsa65_ca.key -pubout) -signature release.sig release.tar.gz", desc: "Sign and verify software packages using ML-DSA-65 (3,309-byte lattice signature)." },
+                { prompt: "josh@pqc-lab:~$", cmd: "openssl s_client -connect pq.cloudflareresearch.com:443 -groups X25519MLKEM768\ntshark -r pqc_tls.pcap -Y 'tls.handshake.extensions_key_share_group'", desc: "Test live Hybrid Post-Quantum TLS 1.3 handshake (`X25519MLKEM768`) and inspect KeyShare extension in Wireshark/tshark." },
+                { prompt: "nginx.conf>", cmd: "ssl_protocols TLSv1.3;\nssl_ecdh_curve X25519MLKEM768:X25519:secp384r1;", desc: "Configure Nginx web server to negotiate Hybrid Post-Quantum TLS 1.3 with classical X25519 fallback." }
+            ],
+            tshoot: "<b>TROUBLESHOOTING HYBRID TLS 1.3 PACKET DROPS (JUMBO CLIENTHELLO):</b> Classical `X25519` sends a 32-byte key share, fitting inside one TCP packet. Hybrid `X25519MLKEM768` sends a **1,216-byte** key share, splitting `ClientHello` across multiple TCP segments! If connections hang after TCP SYN-ACK, a legacy firewall/middlebox is dropping fragmented TLS ClientHello packets or failing on large `ML-DSA` certificate chains (Fix: enable RFC 8879 TLS Certificate Compression and update firewall PAN-OS to 11.1+)."
+        }
+    ];
+
+    // 3. PUTTY / WIN98 INTERACTIVE SIMULATOR ENVIRONMENTS
+    const PUTTY_ENVS = {
+        cisco: {
+            title: "cisco-cat9300-core01 (IOS-XE 17.09.04a)",
+            prompt: "Switch#",
+            banner: "Cisco IOS XE Software, Version 17.09.04a — Catalyst C9300-24T\nJosh Cybersecurity Solutions Physical Rack — Type a command or click a preset above.\n",
+            presets: [
+                {
+                    btn: "show int status err-disabled",
+                    cmd: "show interfaces status err-disabled",
+                    out: "Port      Name               Status       Reason               Err-disabled Vlans\nGi1/0/5   FINANCE_PC         err-disabled psecure-violation    \nGi1/0/18  LOBBY_WALLJACK     err-disabled bpduguard            ",
+                    tutorTitle: "Err-Disabled Switchports (Port-Security & BPDU Guard)",
+                    tutorText: "<b>Diagnosis:</b> `Gi1/0/5` tripped `psecure-violation` (unauthorized MAC address plugged in), and `Gi1/0/18` tripped `bpduguard` (someone connected a mini-switch sending STP BPDUs).<br><b>Fix Syntax:</b> Remove the rogue device, then run: `clear port-security sticky interface Gi1/0/5` -> `interface Gi1/0/5` -> `shutdown` -> `no shutdown`."
+                },
+                {
+                    btn: "show interfaces trunk",
+                    cmd: "show interfaces trunk",
+                    out: "Port        Mode             Encapsulation  Status        Native vlan\nGi1/0/24    on               802.1q         trunking      999\nPo1         on               802.1q         trunking      1 (MISMATCH!)\n\nPort        Vlans allowed on trunk\nGi1/0/24    10,20,30,40\nPo1         10,20\n\nPort        Vlans in spanning tree forwarding state and not pruned\nGi1/0/24    10,20,30,40\nPo1         10",
+                    tutorTitle: "Trunk Native VLAN Mismatch & Missing VLAN in Database",
+                    tutorText: "<b>Diagnosis:</b> Look at `Po1`: Native VLAN is `1` (mismatched with `999`), VLAN 30 was accidentally pruned, and VLAN 20 is allowed on the trunk but NOT in `spanning tree forwarding state` because `vlan 20` isn't created/active in `show vlan brief`!<br><b>Fix Syntax:</b> `vlan 20,30` -> `interface Po1` -> `switchport trunk native vlan 999` -> `switchport trunk allowed vlan add 30`."
+                },
+                {
+                    btn: "show etherchannel summary",
+                    cmd: "show etherchannel summary",
+                    out: "Flags:  D - down        P - bundled in port-channel\n        I - stand-alone s - suspended\n        S - Layer2      U - in use\n\nGroup  Port-channel  Protocol    Ports\n------+-------------+-----------+-----------------------------------------------\n1      Po1(SU)         LACP      Gi1/0/21(P)   Gi1/0/22(P)\n2      Po2(SD)         LACP      Gi1/0/23(I)   Gi1/0/24(s)",
+                    tutorTitle: "Broken LACP EtherChannel Bundle (Flags I & s)",
+                    tutorText: "<b>Diagnosis:</b> `Po1(SU)` is Layer-2 In-Use with both ports `(P)` bundled. `Po2(SD)` is Down: `Gi1/0/23(I)` is Stand-Alone (peer port isn't running LACP), and `Gi1/0/24(s)` is Suspended (trunk allowed VLAN or speed/duplex mismatch between member ports)."
+                }
+            ]
+        },
+        linux: {
+            title: "root@rhel9-rescue:~# (Kernel 5.14.0-427.el9.x86_64)",
+            prompt: "root@rhel9:~#",
+            banner: "Red Hat Enterprise Linux 9.4 Rescue Console — Josh Cybersecurity Solutions\nClick a preset Linux troubleshooting command above.\n",
+            presets: [
+                {
+                    btn: "ausearch -m avc -ts recent",
+                    cmd: "ausearch -m avc -ts recent",
+                    out: "type=AVC msg=audit(1730146449.112:894): avc:  denied  { getattr } for  pid=3104 comm=\"nginx\" path=\"/var/www/html/index.html\" dev=\"dm-0\" ino=1849201 scontext=system_u:system_r:httpd_t:s0 tcontext=unconfined_u:object_r:user_home_t:s0 tclass=file permissive=0",
+                    tutorTitle: "SELinux AVC Denial Caused by Wrong File Context (user_home_t)",
+                    tutorText: "<b>Diagnosis:</b> Nginx (`httpd_t`) was denied access to `/var/www/html/index.html` because the file was moved (`mv`) from `/home` and retained `tcontext=...:user_home_t`!<br><b>Fix Syntax:</b> Never disable SELinux! Run `restorecon -Rv /var/www/html` to restore `httpd_sys_content_t`."
+                },
+                {
+                    btn: "df -h && lsof +L1",
+                    cmd: "df -h /var/log && lsof +L1",
+                    out: "Filesystem                 Size  Used Avail Use% Mounted on\n/dev/mapper/rhel-var_log    50G   49G  1.0G  98% /var/log\n\nCOMMAND    PID   USER   FD   TYPE DEVICE    SIZE/OFF NLINK    NODE NAME\nrsyslogd  1104   root    7w   REG  253,2 48318382080     0 1048592 /var/log/messages.1 (deleted)",
+                    tutorTitle: "Disk 98% Full After 'rm': Unlinked Open File Descriptor",
+                    tutorText: "<b>Diagnosis:</b> `messages.1 (deleted)` has `NLINK = 0`, meaning someone ran `rm` on a 48GB file while `rsyslogd` (PID 1104, FD 7) still had it open.<br><b>Fix Syntax:</b> Truncate the file descriptor in-place with zero downtime: `: > /proc/1104/fd/7`."
+                },
+                {
+                    btn: "ss -tulpn",
+                    cmd: "ss -tulpn",
+                    out: "Netid State  Recv-Q Send-Q Local Address:Port  Peer Address:Port Process\ntcp   LISTEN 0      128          0.0.0.0:22         0.0.0.0:*     users:((\"sshd\",pid=945,fd=3))\ntcp   LISTEN 0      511        127.0.0.1:8443       0.0.0.0:*     users:((\"java\",pid=4102,fd=42))",
+                    tutorTitle: "Service Listening on 127.0.0.1 Instead of 0.0.0.0",
+                    tutorText: "<b>Diagnosis:</b> PID 4102 (`java`) is bound strictly to loopback `127.0.0.1:8443`. External clients connecting to the server's LAN IP get immediate TCP Reset (`Connection Refused`). Change bind address to `0.0.0.0:8443`."
+                }
+            ]
+        },
+        paloalto: {
+            title: "admin@PA-5250> (PAN-OS 11.1.4 Dataplane CLI)",
+            prompt: "admin@PA-5250>",
+            banner: "Palo Alto Networks PA-5250 Next-Generation Firewall — Josh's Cloud Security Lab\nClick a preset PAN-OS CLI command above.\n",
+            presets: [
+                {
+                    btn: "show counter global (delta)",
+                    cmd: "show counter global filter packet-filter yes delta yes",
+                    out: "name                                   value     rate severity  category  aspect    description\n--------------------------------------------------------------------------------------------------\npkt_recv                                  14        3 info      packet    pktproc   Packets received\nflow_rcv_dot1q_tag_err                     5        1 drop      flow      parse     Packets dropped: 802.1q tag not configured\nflow_policy_deny                           9        2 drop      flow      session   Session setup: denied by policy",
+                    tutorTitle: "Isolating Silent Dataplane Drops with Global Delta Counters",
+                    tutorText: "<b>Diagnosis:</b> `flow_rcv_dot1q_tag_err` proves packets are arriving with an 802.1Q VLAN tag that has no matching subinterface on the Palo Alto, and `flow_policy_deny` shows hits on the unlogged implicit `interzone-default` deny rule."
+                },
+                {
+                    btn: "test security-policy-match",
+                    cmd: "test security-policy-match source 10.1.1.50 destination 172.16.5.10 protocol 6 destination-port 443 application github-base",
+                    out: "\"ALLOW-DEV-GITHUB; index: 12\" {\n        from TRUST-LAN;\n        source 10.1.1.0/24;\n        to UNTRUST-ISP;\n        destination any;\n        application/service [ github-base/tcp/any/443 ssl/tcp/any/443 ];\n        action allow;\n}",
+                    tutorTitle: "Verifying App-ID Policy Match & SSL Dependency",
+                    tutorText: "<b>Diagnosis:</b> Rule `ALLOW-DEV-GITHUB` matches! Notice `ssl` is included alongside `github-base` so the initial TLS handshake succeeds before App-ID shifts the session to `github-base`."
+                },
+                {
+                    btn: "show session id 148920",
+                    cmd: "show session id 148920",
+                    out: "Session          148920\n        c2s flow: source: 10.1.1.50 [TRUST-LAN] -> dst: 198.51.100.44 proto:6 sport:54912 dport:443\n        s2c flow: source: 198.51.100.44 [UNTRUST-ISP] -> dst: 203.0.113.10 proto:6 sport:443 dport:29104\n        total byte count(c2s) : 14200\n        total byte count(s2c) : 0\n        application           : incomplete",
+                    tutorTitle: "Why Session Shows 'application: incomplete' (s2c bytes = 0)",
+                    tutorText: "<b>Diagnosis:</b> Client-to-server (`c2s`) sent 14,200 bytes, but Server-to-client (`s2c`) received `0 bytes`, leaving App-ID as `incomplete`. Check upstream return routing for the NAT IP `203.0.113.10` or asymmetric routing."
+                }
+            ]
+        },
+        pqc: {
+            title: "josh@pqc-crypto-lab:~$ (OpenSSL 3.3.2 + liboqs NIST PQC)",
+            prompt: "josh@pqc-lab:~$",
+            banner: "OpenSSL 3.3.2 Post-Quantum Cryptography Sandbox (FIPS 203 ML-KEM & FIPS 204 ML-DSA)\nClick a preset PQC command above.\n",
+            presets: [
+                {
+                    btn: "ML-KEM-768 Keygen & Encap",
+                    cmd: "openssl genpkey -algorithm mlkem768 -out priv.pem && openssl pkeyutl -encap -inkey priv.pem -out ct.bin -secret shared.bin && ls -lh priv.pem ct.bin shared.bin",
+                    out: "-rw------- 1 josh josh 3.3K Oct 28 20:30 priv.pem\n-rw-r--r-- 1 josh josh 1.1K Oct 28 20:30 ct.bin\n-rw-r--r-- 1 josh josh   32 Oct 28 20:30 shared.bin\n[OK] NIST FIPS 203 ML-KEM-768: 1,088-byte ciphertext encapsulates 256-bit shared secret!",
+                    tutorTitle: "NIST FIPS 203 ML-KEM-768 Key Encapsulation Workflow",
+                    tutorText: "<b>Explanation:</b> Unlike RSA encryption, `ML-KEM-768` (Kyber) uses `pkeyutl -encap` to generate a random 32-byte symmetric key (`shared.bin`) and a 1,088-byte lattice ciphertext (`ct.bin`) immune to Shor's quantum algorithm."
+                },
+                {
+                    btn: "Test Hybrid TLS 1.3 (X25519MLKEM768)",
+                    cmd: "openssl s_client -connect pq.cloudflareresearch.com:443 -groups X25519MLKEM768",
+                    out: "CONNECTED(00000003)\nNew, TLSv1.3, Cipher is TLS_AES_256_GCM_SHA384\nServer Temp Key: X25519MLKEM768, 1216 bits\nVerify return code: 0 (ok)",
+                    tutorTitle: "Hybrid TLS 1.3 Key Exchange (X25519 + ML-KEM-768)",
+                    tutorText: "<b>Explanation:</b> `Server Temp Key: X25519MLKEM768` confirms the TLS 1.3 session key is derived from BOTH classical elliptic-curve `X25519` AND quantum-resistant `ML-KEM-768`, neutralizing Harvest-Now-Decrypt-Later attacks."
+                }
+            ]
+        }
+    };
+
+    let activeSyntaxTab = 'all';
+    let activePuttyEnv = 'cisco';
+
+    // RENDER DURGASOFT BATCH SCHEDULE TABLE
+    function renderBatchTable() {
+        const filterVal = document.getElementById('batchFilterSelect').value;
+        const tbody = document.getElementById('batchTableBody');
+        tbody.innerHTML = '';
+
+        const rows = filterVal === 'ALL'
+            ? BATCH_ROWS
+            : BATCH_ROWS.filter(r => r.track === filterVal);
+
+        rows.forEach(r => {
+            const tr = document.createElement('tr');
+            tr.style.backgroundColor = r.rowBg;
+            tr.innerHTML = `
+                <td style="text-align:center; font-weight:bold;">${r.sno}</td>
+                <td>
+                    <b>${r.course}</b>
+                    <span class="flash-badge">${r.badge}</span>
+                </td>
+                <td style="font-weight:bold; color:#003366;">${r.faculty}</td>
+                <td style="font-weight:bold; color:#800000;">${r.date}</td>
+                <td><b>${r.time}</b></td>
+                <td style="text-align:center;">
+                    <a onclick="openModal('booking', '${r.course.replace(/'/g, "\\'")}')" style="font-weight:bold; color:#cc0000;">
+                        [Register Now]
+                    </a>
+                </td>
+                <td style="text-align:center;">
+                    <a onclick="switchSyntaxTab('${r.tabTarget}')" style="font-weight:bold; color:#006600;">
+                        [View Syntax]
+                    </a>
+                </td>
+            `;
+            tbody.appendChild(tr);
+        });
+    }
+
+    // SWITCH SYNTAX TAB & RENDER MARS-NET COMMAND TABLES
+    function switchSyntaxTab(tabKey) {
+        activeSyntaxTab = tabKey;
+        ['all', 'cisco', 'linux', 'paloalto', 'pqc'].forEach(k => {
+            const btn = document.getElementById('tabBtn-' + k);
+            if (btn) {
+                if (k === tabKey) btn.classList.add('active-tab');
+                else btn.classList.remove('active-tab');
+            }
+        });
+        renderSyntaxTables();
+        document.getElementById('syntax-portal').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function renderSyntaxTables() {
+        const container = document.getElementById('syntaxTablesContainer');
+        const q = (document.getElementById('cmdSearchBox').value || '').toLowerCase().trim();
+        container.innerHTML = '';
+
+        const sections = SYNTAX_SECTIONS.filter(sec => {
+            if (activeSyntaxTab !== 'all' && sec.track !== activeSyntaxTab) return false;
+            if (!q) return true;
+            const text = (sec.title + ' ' + sec.subtitle + ' ' + sec.tshoot + ' ' +
+                sec.rows.map(r => r.prompt + ' ' + r.cmd + ' ' + r.desc).join(' ')).toLowerCase();
+            return text.includes(q);
+        });
+
+        if (sections.length === 0) {
+            container.innerHTML = `<div style="padding:15px; background:#ffffcc; border:1px solid #cc0000; font-weight:bold; color:#cc0000;">No command tables matched your filter "${q}". Click [Clear] to reset.</div>`;
+            return;
+        }
+
+        sections.forEach(sec => {
+            const filteredRows = q
+                ? sec.rows.filter(r => (r.prompt + ' ' + r.cmd + ' ' + r.desc).toLowerCase().includes(q))
+                : sec.rows;
+            const rowsToRender = filteredRows.length > 0 ? filteredRows : sec.rows;
+
+            const trHtml = rowsToRender.map((r, i) => {
+                const bg = i % 2 === 0 ? '#ffffff' : '#f2f6ff';
+                const safeCmd = r.cmd.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, ' ; ');
+                return `
+                    <tr style="background-color:${bg};">
+                        <td style="width:145px;"><span class="prompt-tag">${r.prompt}</span></td>
+                        <td style="width:43%;"><code class="code-cmd">${r.cmd}</code></td>
+                        <td>${r.desc}</td>
+                        <td style="width:62px; text-align:center; vertical-align:middle;">
+                            <button class="win-btn" onclick="copyTextCmd('${safeCmd}')">Copy</button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+
+            const block = document.createElement('div');
+            block.innerHTML = `
+                <div style="background-color:${sec.headerBg}; color:#ffff00; padding:6px 8px; font-family:Tahoma,sans-serif; font-size:12px; font-weight:bold; border:2px solid #000000; border-bottom:none; display:flex; justify-content:space-between; align-items:center;">
+                    <span>${sec.title}</span>
+                    <button class="win-btn win-btn-yellow" style="font-size:10px; padding:1px 6px;" onclick="openModal('booking', '1-on-1 Practice: ${sec.title.replace(/'/g, "\\'")}')">
+                        Practice Live with Josh »
+                    </button>
+                </div>
+                <div style="background-color:#e8eef5; color:#003366; padding:3px 8px; font-size:11px; font-weight:bold; border-left:2px solid #000000; border-right:2px solid #000000;">
+                    ${sec.subtitle}
+                </div>
+                <div style="overflow-x:auto;">
+                    <table class="syntax-table" border="1" cellpadding="5" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>CLI Mode / Prompt</th>
+                                <th>Exact Command &amp; Syntax</th>
+                                <th>Purpose &amp; Verification Notes</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${trHtml}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tshoot-box">
+                    🛠 ${sec.tshoot}
+                </div>
+            `;
+            container.appendChild(block);
+        });
+    }
+
+    // COPY COMMAND HELPER
+    function copyTextCmd(cmdText) {
+        const ta = document.createElement('textarea');
+        ta.value = cmdText;
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+            document.execCommand('copy');
+            const badge = document.getElementById('copyStatusInline');
+            badge.style.display = 'inline-block';
+            setTimeout(() => { badge.style.display = 'none'; }, 1800);
+        } catch (e) {}
+        document.body.removeChild(ta);
+    }
+
+    // PUTTY TERMINAL SIMULATOR FUNCTIONS
+    function selectPuttyEnv(envKey) {
+        activePuttyEnv = envKey;
+        ['cisco', 'linux', 'paloalto', 'pqc'].forEach(k => {
+            const b = document.getElementById('simBtn-' + k);
+            if (b) {
+                if (k === envKey) b.classList.add('win-btn-yellow');
+                else b.classList.remove('win-btn-yellow');
+            }
+        });
+
+        const env = PUTTY_ENVS[envKey];
+        document.getElementById('puttyTitleText').textContent = env.title;
+        document.getElementById('puttyPromptLabel').textContent = env.prompt;
+
+        const presetBox = document.getElementById('puttyPresetContainer');
+        presetBox.innerHTML = '';
+        env.presets.forEach((p, idx) => {
+            const btn = document.createElement('button');
+            btn.className = 'win-btn';
+            btn.textContent = p.btn;
+            btn.onclick = () => runPuttyPreset(idx);
+            presetBox.appendChild(btn);
+        });
+
+        document.getElementById('puttyScreen').textContent = env.banner + '\n';
+        runPuttyPreset(0);
+    }
+
+    function runPuttyPreset(idx) {
+        const env = PUTTY_ENVS[activePuttyEnv];
+        const p = env.presets[idx];
+        if (!p) return;
+        const scr = document.getElementById('puttyScreen');
+        scr.textContent += `\n${env.prompt} ${p.cmd}\n${p.out}\n`;
+        scr.scrollTop = scr.scrollHeight;
+
+        document.getElementById('puttyTutorHeading').textContent = p.tutorTitle;
+        document.getElementById('puttyTutorBody').innerHTML = p.tutorText;
+    }
+
+    function submitPuttyCommand(e) {
+        e.preventDefault();
+        const inp = document.getElementById('puttyInput');
+        const cmd = inp.value.trim();
+        if (!cmd) return;
+        inp.value = '';
+
+        const env = PUTTY_ENVS[activePuttyEnv];
+        const scr = document.getElementById('puttyScreen');
+
+        if (cmd.toLowerCase() === 'cls' || cmd.toLowerCase() === 'clear') {
+            clearPutty();
+            return;
+        }
+        if (cmd.toLowerCase() === 'help' || cmd === '?') {
+            const list = env.presets.map(p => '  ' + p.cmd).join('\n');
+            scr.textContent += `\n${env.prompt} ${cmd}\nAvailable preset troubleshooting commands:\n${list}\n`;
+            scr.scrollTop = scr.scrollHeight;
+            return;
+        }
+
+        const matchIdx = env.presets.findIndex(p =>
+            p.cmd.toLowerCase().includes(cmd.toLowerCase()) ||
+            p.btn.toLowerCase().includes(cmd.toLowerCase())
+        );
+        if (matchIdx !== -1) {
+            runPuttyPreset(matchIdx);
+        } else {
+            scr.textContent += `\n${env.prompt} ${cmd}\n[Command executed in lab sandbox. Click a preset button above or type 'help' for full diagnostic outputs.]\n`;
+            scr.scrollTop = scr.scrollHeight;
+        }
+    }
+
+    function clearPutty() {
+        document.getElementById('puttyScreen').textContent = PUTTY_ENVS[activePuttyEnv].banner;
+    }
+
+    // SIDEBAR QUICK ENQUIRY HANDLER
+    function handleSidebarEnquiry(e) {
+        e.preventDefault();
+        const name = document.getElementById('eqName').value;
+        const contact = document.getElementById('eqContact').value;
+        const track = document.getElementById('eqTrack').value;
+        const mode = document.getElementById('eqMode').value;
+        const refId = 'JCA-' + Math.floor(10000 + Math.random() * 90000);
+
+        const resBox = document.getElementById('sidebarEnquiryResult');
+        resBox.style.display = 'block';
+        resBox.innerHTML = `
+            <b style="color:#008000;">✔ ENQUIRY REGISTERED! (Ref: ${refId})</b><br>
+            Thank you <b>${name}</b>. Mr. Josh will contact you at <b>${contact}</b> with Zoom &amp; SSH lab details for <b>${track} (${mode})</b>.
+        `;
+        document.getElementById('sidebarEnquiryForm').reset();
+    }
+
+    // CLASSIC WIN98 MODAL FOR REGISTRATION
+    function openModal(type, courseTitle) {
+        const backdrop = document.getElementById('classicModalBackdrop');
+        const body = document.getElementById('modalWindowBody');
+        document.getElementById('modalWindowTitle').textContent = 'JOSH CYBERSECURITY SOLUTIONS :: ' + courseTitle;
+
+        body.innerHTML = `
+            <div style="background-color:#ffff99; border:2px solid #cc0000; padding:6px 8px; margin-bottom:10px; font-weight:bold; color:#cc0000;">
+                ★ DIRECT 1-ON-1 TUTORING &amp; ONLINE BATCH REGISTRATION FORM ★
+            </div>
+            <form onsubmit="submitModalRegistration(event)">
+                <table border="1" cellpadding="6" cellspacing="0" style="width:100%; border-collapse:collapse; font-size:12px;">
+                    <tr style="background:#ffffcc;">
+                        <td style="width:160px; font-weight:bold;">Selected Course / Lab:</td>
+                        <td><input type="text" id="modCourse" value="${courseTitle}" class="classic-input" style="width:100%; font-weight:bold;" required></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold;">Student Full Name *:</td>
+                        <td><input type="text" id="modName" class="classic-input" style="width:100%;" required placeholder="Enter your name"></td>
+                    </tr>
+                    <tr style="background:#ffffcc;">
+                        <td style="font-weight:bold;">Email / Phone / Discord *:</td>
+                        <td><input type="text" id="modContact" class="classic-input" style="width:100%;" required placeholder="you@domain.com / +1 (403)..."></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold;">Preferred Training Mode:</td>
+                        <td>
+                            <select id="modMode" class="classic-input" style="width:100%;">
+                                <option value="1-on-1 Live Private Tutoring with Mr. Josh">1-on-1 Live Private Tutoring with Mr. Josh</option>
+                                <option value="Free 30-Min Live Demo & Lab Walkthrough">Free 30-Min Live Demo &amp; Lab Walkthrough</option>
+                                <option value="Urgent 1-Hour Production/Lab Troubleshooting">Urgent 1-Hour Production/Lab Troubleshooting</option>
+                                <option value="Online Group Batch">Online Group Batch</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="background:#ffffcc;">
+                        <td style="font-weight:bold;">Topics / Commands to Focus On:</td>
+                        <td><textarea id="modNotes" rows="3" class="classic-input" style="width:100%;" placeholder="e.g. Cisco VLAN trunks & LACP, Linux SELinux/LVM, Palo Alto Packet-Diag, or NIST PQC OpenSSL..."></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align:center; background:#e0e0e0;">
+                            <button type="submit" class="win-btn win-btn-red" style="padding:6px 18px; font-size:12px;">
+                                » CONFIRM REGISTRATION &amp; GET LAB LINK «
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        `;
+        backdrop.style.display = 'flex';
+    }
+
+    function submitModalRegistration(e) {
+        e.preventDefault();
+        const course = document.getElementById('modCourse').value;
+        const name = document.getElementById('modName').value;
+        const contact = document.getElementById('modContact').value;
+        const mode = document.getElementById('modMode').value;
+        const ticket = 'JOSH-LAB-' + Math.floor(100000 + Math.random() * 900000);
+
+        document.getElementById('modalWindowBody').innerHTML = `
+            <div style="background-color:#e6ffe6; border:2px solid #008000; padding:12px; text-align:center;">
+                <h3 style="color:#008000; margin:0 0 8px 0; font-family:Tahoma,sans-serif;">✔ REGISTRATION CONFIRMED! (TICKET #${ticket})</h3>
+                <p style="margin:4px 0;">Thank you <b>${name}</b>! Your request for <b>${course}</b> (${mode}) has been logged.</p>
+                <p style="margin:4px 0; color:#cc0000; font-weight:bold;">Mr. Josh will send your Zoom link &amp; SSH Rack Credentials to: ${contact}</p>
+            </div>
+        `;
+    }
+
+    function closeModal() {
+        document.getElementById('classicModalBackdrop').style.display = 'none';
+    }
+
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+
+    /*************************************************************************
+     * PORTAL VISIBILITY / TRANSPARENCY CONTROLLER FOR BACKGROUND MINIGAME
+     *************************************************************************/
+    function setPortalVisibility(mode) {
+        const wrapper = document.getElementById('mainPortalWrapper');
+        const minHeader = document.getElementById('minimizedFloatingHeader');
+        wrapper.classList.remove('portal-glass', 'portal-ghost', 'portal-minimized');
+
+        ['btnViewSolid', 'btnViewGlass', 'btnViewGhost', 'btnViewMin'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.classList.remove('win-btn-yellow');
+        });
+
+        if (mode === 'glass') {
+            wrapper.classList.add('portal-glass');
+            minHeader.style.display = 'none';
+            document.getElementById('btnViewGlass').classList.add('win-btn-yellow');
+        } else if (mode === 'ghost') {
+            wrapper.classList.add('portal-ghost');
+            minHeader.style.display = 'none';
+            document.getElementById('btnViewGhost').classList.add('win-btn-yellow');
+        } else if (mode === 'minimized') {
+            wrapper.classList.add('portal-minimized');
+            minHeader.style.display = 'flex';
+            document.getElementById('btnViewMin').classList.add('win-btn-yellow');
+        } else {
+            // 100% solid
+            minHeader.style.display = 'none';
+            document.getElementById('btnViewSolid').classList.add('win-btn-yellow');
+        }
+    }
+
+    /*************************************************************************
+     * RATHA YUDDHA: 16-BIT INDIAN BATTLE CITY BACKGROUND MINIGAME ENGINE
+     * Runs continuously in #bgTankCanvas with Smart AI Autopilot + 1P Takeover
+     *************************************************************************/
+    const RY_SUB_TILE = 24;
+    const RY_MACRO_TILE = 48;
+    const RY_SUB_GRID = 26;
+    const RY_MACRO_GRID = 13;
+    const RY_CANVAS_SIZE = 624;
+
+    const RY_EMPTY = 0;
+    const RY_BRICK = 1;
+    const RY_MARBLE = 2;
+    const RY_CANOPY = 3;
+    const RY_WATER = 4;
+    const RY_ICE = 5;
+
+    const RY_DIR = {
+        UP:    { id: 0, dx: 0,  dy: -1, angle: 0 },
+        RIGHT: { id: 1, dx: 1,  dy: 0,  angle: Math.PI / 2 },
+        DOWN:  { id: 2, dx: 0,  dy: 1,  angle: Math.PI },
+        LEFT:  { id: 3, dx: -1, dy: 0,  angle: -Math.PI / 2 }
+    };
+    const RY_DIR_LIST = [RY_DIR.UP, RY_DIR.RIGHT, RY_DIR.DOWN, RY_DIR.LEFT];
+
+    const RY_PWR_TYPES = [
+        { id: 'SHIELD', symbol: '☸', label: 'CHAKRA SHIELD', color: '#ffd700', bg: '#7c2d12' },
+        { id: 'STAR',   symbol: '★', label: 'AGNI STAR',     color: '#fde047', bg: '#9a3412' },
+        { id: 'BOMB',   symbol: '💥', label: 'SUDARSHANA',    color: '#f87171', bg: '#7f1d1d' },
+        { id: 'FREEZE', symbol: '⏳', label: 'KALA FREEZE',   color: '#38bdf8', bg: '#0c4a6e' },
+        { id: 'SHOVEL', symbol: '🧱', label: 'MASON SHOVEL',  color: '#4ade80', bg: '#14532d' },
+        { id: 'LIFE',   symbol: '🏺', label: 'SWARNA KALASH', color: '#facc15', bg: '#581c87' }
+    ];
+
+    const RY_STAGES = [
+        {
+            id: 1, name: "Gateway of Jaipur", bgTint: "#160d18",
+            weights: { SCOUT: 0.55, STRIKER: 0.30, SIEGE: 0.10, GAJA: 0.05 },
+            map: [
+                ". . . . . . . . . . . . .",
+                ". B . B . B M B . B . B .",
+                ". B . B . B . B . B . B .",
+                ". B . B . B B B . B . B .",
+                ". B . B . . . . . B . B .",
+                ". . . . B B C B B . . . .",
+                "B B . B C C M C C B . B B",
+                ". . . . B B C B B . . . .",
+                ". B . B . B B B . B . B .",
+                ". B . B . B . B . B . B .",
+                ". B . B . . . . . B . B .",
+                ". B . . . . . . . . . B .",
+                ". . . . . . . . . . . . ."
+            ]
+        },
+        {
+            id: 2, name: "Monsoon Canopy", bgTint: "#0c1914",
+            weights: { SCOUT: 0.45, STRIKER: 0.35, SIEGE: 0.10, GAJA: 0.10 },
+            map: [
+                ". . C . . . . . . . C . .",
+                ". B C B . C B C . B C B .",
+                ". B C B C C B C C B C B .",
+                ". C C C C B M B C C C C .",
+                "C C B B . . C . . B B C C",
+                "C C B M C C C C C M B C C",
+                ". C . . C W W W C . . C .",
+                "C C B B C C C C C B B C C",
+                ". C B B . B B B . B B C .",
+                ". B C C . B . B . C C B .",
+                ". B . B C C . C C B . B .",
+                ". . . B C . . . C B . . .",
+                ". . . . . . . . . . . . ."
+            ]
+        },
+        {
+            id: 3, name: "River Yamuna Crossing", bgTint: "#0c1624",
+            weights: { SCOUT: 0.35, STRIKER: 0.40, SIEGE: 0.15, GAJA: 0.10 },
+            map: [
+                ". . . . . . . . . . . . .",
+                ". B B . B . B . B . B B .",
+                ". B M . B . C . B . M B .",
+                ". . . . . C C C . . . . .",
+                "W W . W W W . W W W . W W",
+                "W W . W W W . W W W . W W",
+                ". . . B . B M B . B . . .",
+                ". B B B . . . . . B B B .",
+                "W W W . W W . W W . W W W",
+                ". C C . B B . B B . C C .",
+                ". B B . B . . . B . B B .",
+                ". B . . . . . . . . . B .",
+                ". . . . . . . . . . . . ."
+            ]
+        },
+        {
+            id: 4, name: "Red Fort Bastion", bgTint: "#1f0e10",
+            weights: { SCOUT: 0.30, STRIKER: 0.30, SIEGE: 0.25, GAJA: 0.15 },
+            map: [
+                ". . . . . . . . . . . . .",
+                ". M B B . B M B . B B M .",
+                ". B . B . B . B . B . B .",
+                ". B . . . . . . . . . B .",
+                "B B . B M B . B M B . B B",
+                ". . . B . . C . . B . . .",
+                ". M B B . C M C . B B M .",
+                ". . . B . . C . . B . . .",
+                "B B . B M B B B M B . B B",
+                ". B . . . B . B . . . B .",
+                ". B B M . . . . . M B B .",
+                ". . . B . . . . . B . . .",
+                ". . . . . . . . . . . . ."
+            ]
+        },
+        {
+            id: 5, name: "Thar Desert Mirage", bgTint: "#21170c",
+            weights: { SCOUT: 0.35, STRIKER: 0.35, SIEGE: 0.15, GAJA: 0.15 },
+            map: [
+                ". . . . . . . . . . . . .",
+                ". B B . . B I B . . B B .",
+                ". B B . I I I I I . B B .",
+                ". . . I I B M B I I . . .",
+                ". B . I B B . B B I . B .",
+                "M B . I . . C . . I . B M",
+                ". . . I B C M C B I . . .",
+                "M B . I . . C . . I . B M",
+                ". B . I I B B B I I . B .",
+                ". . . . I I . I I . . . .",
+                ". B B . B . . . B . B B .",
+                ". B B . . . . . . . B B .",
+                ". . . . . . . . . . . . ."
+            ]
+        },
+        {
+            id: 6, name: "Hampi Stone Ruins", bgTint: "#19151d",
+            weights: { SCOUT: 0.20, STRIKER: 0.30, SIEGE: 0.25, GAJA: 0.25 },
+            map: [
+                ". . . . . . . . . . . . .",
+                ". M . B M . B . M B . M .",
+                ". M . B . . B . . B . M .",
+                ". . . . B M B M B . . . .",
+                "B B M . B . C . B . M B B",
+                ". . C . . C M C . . C . .",
+                ". M C B M C C C M B C M .",
+                ". . C . . C M C . . C . .",
+                "B B M . B B B B B . M B B",
+                ". . . . B . . . B . . . .",
+                ". M B . M . B . M . B M .",
+                ". M B . . . . . . . B M .",
+                ". . . . . . . . . . . . ."
+            ]
+        },
+        {
+            id: 7, name: "Palace of Winds", bgTint: "#1c101b",
+            weights: { SCOUT: 0.25, STRIKER: 0.35, SIEGE: 0.25, GAJA: 0.15 },
+            map: [
+                ". . I . . . . . . . I . .",
+                ". B I B I I B I I B I B .",
+                ". B I B I M B M I B I B .",
+                ". I I I I I I I I I I I .",
+                "I I B M I B . B I M B I I",
+                "I B B . I I C I I . B B I",
+                "I I I I C C M C C I I I I",
+                "I B B . I I C I I . B B I",
+                "I I B M I B B B I M B I I",
+                ". I I I I I . I I I I I .",
+                ". B I B B . . . B B I B .",
+                ". B I . . . . . . . I B .",
+                ". . . . . . . . . . . . ."
+            ]
+        },
+        {
+            id: 8, name: "Deccan Plateau Siege", bgTint: "#14111c",
+            weights: { SCOUT: 0.15, STRIKER: 0.30, SIEGE: 0.30, GAJA: 0.25 },
+            map: [
+                ". . . . . . . . . . . . .",
+                "B B . B B M . M B B . B B",
+                ". . . B . . . . . B . . .",
+                ". B B B . W W W . B B B .",
+                ". B M . . W C W . . M B .",
+                "W W . B B C C C B B . W W",
+                ". . . B M C M C M B . . .",
+                "W W . B B C C C B B . W W",
+                ". B M . . B B B . . M B .",
+                ". B B B . B . B . B B B .",
+                ". . . B . . . . . B . . .",
+                "B B . B . . . . . B . B B",
+                ". . . . . . . . . . . . ."
+            ]
+        },
+        {
+            id: 9, name: "Golkonda Diamond Vault", bgTint: "#18130d",
+            weights: { SCOUT: 0.15, STRIKER: 0.25, SIEGE: 0.25, GAJA: 0.35 },
+            map: [
+                ". . . . . . . . . . . . .",
+                ". . B M B . B . B M B . .",
+                ". B M . . B M B . . M B .",
+                "B M . I I . . . I I . M B",
+                ". . B I B B M B B I B . .",
+                ". B M I B C C C B I M B .",
+                ". . B I M C W C M I B . .",
+                ". B M I B C C C B I M B .",
+                ". . B I B B M B B I B . .",
+                "B M . I I . B . I I . M B",
+                ". B M . . . . . . . M B .",
+                ". . B B . . . . . B B . .",
+                ". . . . . . . . . . . . ."
+            ]
+        },
+        {
+            id: 10, name: "Imperial Citadel Finale", bgTint: "#200b14",
+            weights: { SCOUT: 0.10, STRIKER: 0.25, SIEGE: 0.30, GAJA: 0.35 },
+            map: [
+                ". . . . . . . . . . . . .",
+                ". M B . M B . B M . B M .",
+                ". B B . B M . M B . B B .",
+                ". . I I . . C . . I I . .",
+                "M B I W W C M C W W I B M",
+                "B B I W C C B C C W I B B",
+                ". . I . C B M B C . I . .",
+                "B B I W C C B C C W I B B",
+                "M B I W W C M C W W I B M",
+                ". . I I . B B B . I I . .",
+                ". M B . B B . B B . B M .",
+                ". M B . . . . . . . B M .",
+                ". . . . . . . . . . . . ."
+            ]
+        }
+    ];
+
+    const RY_ENEMY_TYPES = {
+        SCOUT:   { key: 'SCOUT',   speed: 2.3, bulletSpeed: 5.2, hp: 1, score: 100, fireCooldown: 65, primary: '#eab308', secondary: '#a16207', trim: '#fef08a' },
+        STRIKER: { key: 'STRIKER', speed: 1.7, bulletSpeed: 7.6, hp: 1, score: 200, fireCooldown: 50, primary: '#14b8a6', secondary: '#0f766e', trim: '#ccfbf1' },
+        SIEGE:   { key: 'SIEGE',   speed: 1.5, bulletSpeed: 6.2, hp: 1, score: 300, fireCooldown: 34, primary: '#a855f7', secondary: '#6b21a8', trim: '#fb923c' },
+        GAJA:    { key: 'GAJA',    speed: 1.2, bulletSpeed: 5.5, hp: 4, score: 400, fireCooldown: 55, primary: '#dc2626', secondary: '#7f1d1d', trim: '#facc15' }
+    };
+
+    // WebAudio Retro Sound Engine (Muted by default so background battle doesn't startle visitors)
+    class RySoundEngine {
+        constructor() {
+            this.ctx = null;
+            this.sfxEnabled = false;
+            this.musicEnabled = false;
+            this.musicTimer = null;
+            this.noteIndex = 0;
+            this.ragaScale = [261.63, 277.18, 329.63, 349.23, 392.00, 415.30, 493.88, 523.25];
+            this.melodyPattern = [0, 2, 4, 3, 2, 1, 0, 4, 5, 7, 5, 4, 3, 2, 1, 0];
+        }
+        init() {
+            if (!this.ctx) {
+                const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                if (AudioCtx) this.ctx = new AudioCtx();
+            }
+            if (this.ctx && this.ctx.state === 'suspended') this.ctx.resume();
+        }
+        playTone(freq, type, duration, vol = 0.1, slideFreq = null) {
+            if (!this.sfxEnabled) return;
+            this.init();
+            if (!this.ctx) return;
+            const now = this.ctx.currentTime;
+            const osc = this.ctx.createOscillator();
+            const gain = this.ctx.createGain();
+            osc.type = type;
+            osc.frequency.setValueAtTime(freq, now);
+            if (slideFreq) osc.frequency.exponentialRampToValueAtTime(slideFreq, now + duration);
+            gain.gain.setValueAtTime(vol, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+            osc.connect(gain);
+            gain.connect(this.ctx.destination);
+            osc.start(now);
+            osc.stop(now + duration);
+        }
+        playNoise(duration, vol = 0.14, filterFreq = 700) {
+            if (!this.sfxEnabled) return;
+            this.init();
+            if (!this.ctx) return;
+            const bufferSize = this.ctx.sampleRate * duration;
+            const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+            const data = buffer.getChannelData(0);
+            for (let i = 0; i < bufferSize; i++) data[i] = Math.random() * 2 - 1;
+            const noise = this.ctx.createBufferSource();
+            noise.buffer = buffer;
+            const filter = this.ctx.createBiquadFilter();
+            filter.type = 'lowpass';
+            filter.frequency.setValueAtTime(filterFreq, this.ctx.currentTime);
+            const gain = this.ctx.createGain();
+            gain.gain.setValueAtTime(vol, this.ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + duration);
+            noise.connect(filter);
+            filter.connect(gain);
+            gain.connect(this.ctx.destination);
+            noise.start();
+        }
+        shoot() { this.playTone(440, 'square', 0.09, 0.08, 120); }
+        brickHit() { this.playNoise(0.08, 0.12, 600); }
+        marbleClang() { this.playTone(1200, 'square', 0.05, 0.07, 1800); }
+        explosion(big = false) { this.playNoise(big ? 0.45 : 0.25, big ? 0.22 : 0.14, 450); }
+        powerup() { [523, 659, 784].forEach((n, i) => setTimeout(() => this.playTone(n, 'square', 0.08, 0.08), i * 50)); }
+        startRaga() {
+            this.stopRaga();
+            if (!this.musicEnabled) return;
+            this.musicTimer = setInterval(() => {
+                if (!this.musicEnabled || !ryGame || ryGame.paused) return;
+                this.init();
+                if (!this.ctx) return;
+                const step = this.melodyPattern[this.noteIndex % this.melodyPattern.length];
+                const freq = this.ragaScale[step];
+                const now = this.ctx.currentTime;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(freq, now);
+                gain.gain.setValueAtTime(0.03, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.16);
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start(now);
+                osc.stop(now + 0.16);
+                this.noteIndex++;
+            }, 230);
+        }
+        stopRaga() {
+            if (this.musicTimer) {
+                clearInterval(this.musicTimer);
+                this.musicTimer = null;
+            }
+        }
+    }
+
+    const rySound = new RySoundEngine();
+    const ryKeys = {};
+
+    class RyBullet {
+        constructor(x, y, dir, speed, isPlayer, powerTier = 0) {
+            this.x = x;
+            this.y = y;
+            this.dir = dir;
+            this.speed = speed;
+            this.isPlayer = isPlayer;
+            this.powerTier = powerTier;
+            this.active = true;
+        }
+        update() {
+            this.x += this.dir.dx * this.speed;
+            this.y += this.dir.dy * this.speed;
+            if (this.x < 4 || this.x > RY_CANVAS_SIZE - 4 || this.y < 4 || this.y > RY_CANVAS_SIZE - 4) {
+                this.active = false;
+                ryGame.spawnSparks(this.x, this.y, '#cbd5e1', 4);
+                return;
+            }
+            const hitRadius = 6;
+            const pts = (this.dir === RY_DIR.UP || this.dir === RY_DIR.DOWN)
+                ? [{ x: this.x - hitRadius, y: this.y }, { x: this.x + hitRadius, y: this.y }]
+                : [{ x: this.x, y: this.y - hitRadius }, { x: this.x, y: this.y + hitRadius }];
+
+            let hitBrick = false, hitMarble = false;
+            for (const pt of pts) {
+                const gx = Math.floor(pt.x / RY_SUB_TILE);
+                const gy = Math.floor(pt.y / RY_SUB_TILE);
+                if (gx < 0 || gx >= RY_SUB_GRID || gy < 0 || gy >= RY_SUB_GRID) continue;
+                const tile = ryGame.grid[gy][gx];
+                if (tile === RY_BRICK) {
+                    ryGame.grid[gy][gx] = RY_EMPTY;
+                    hitBrick = true;
+                    ryGame.spawnSparks(gx * RY_SUB_TILE + 12, gy * RY_SUB_TILE + 12, '#d97742', 6);
+                } else if (tile === RY_MARBLE) {
+                    hitMarble = true;
+                    if (this.isPlayer && this.powerTier >= 3) {
+                        ryGame.grid[gy][gx] = RY_EMPTY;
+                        ryGame.spawnSparks(gx * RY_SUB_TILE + 12, gy * RY_SUB_TILE + 12, '#f8fafc', 10);
+                    }
+                }
+            }
+            if (hitBrick) { this.active = false; rySound.brickHit(); }
+            else if (hitMarble) { this.active = false; rySound.marbleClang(); }
+
+            // Check Golden Lotus Sanctum Hit
+            if (!ryGame.baseDestroyed) {
+                const bx = 12 * RY_SUB_TILE;
+                const by = 24 * RY_SUB_TILE;
+                if (this.x >= bx + 4 && this.x <= bx + RY_MACRO_TILE - 4 &&
+                    this.y >= by + 4 && this.y <= by + RY_MACRO_TILE - 4) {
+                    this.active = false;
+                    if (!this.isPlayer) ryGame.destroyBase();
+                }
+            }
+        }
+        draw(ctx) {
+            ctx.save();
+            ctx.translate(this.x, this.y);
+            ctx.rotate(this.dir.angle);
+            ctx.fillStyle = this.isPlayer ? (this.powerTier >= 3 ? '#38bdf8' : '#facc15') : '#fb7185';
+            ctx.beginPath();
+            ctx.arc(0, 0, 4.5, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(-1.5, -4, 3, 5);
+            ctx.restore();
+        }
+    }
+
+    class RyTank {
+        constructor(x, y, isPlayer) {
+            this.x = x;
+            this.y = y;
+            this.size = RY_MACRO_TILE;
+            this.dir = isPlayer ? RY_DIR.UP : RY_DIR.DOWN;
+            this.isPlayer = isPlayer;
+            this.treadFrame = 0;
+            this.recoil = 0;
+            this.cooldown = 0;
+            this.alive = true;
+        }
+        changeDirection(newDir) {
+            if (this.dir !== newDir) {
+                const wasVert = (this.dir === RY_DIR.UP || this.dir === RY_DIR.DOWN);
+                const nowVert = (newDir === RY_DIR.UP || newDir === RY_DIR.DOWN);
+                if (wasVert !== nowVert) {
+                    this.x = Math.round(this.x / RY_SUB_TILE) * RY_SUB_TILE;
+                    this.y = Math.round(this.y / RY_SUB_TILE) * RY_SUB_TILE;
+                }
+                this.dir = newDir;
+            }
+        }
+        rectsOverlap(x1, y1, w1, h1, x2, y2, w2, h2) {
+            return x1 < x2 + w2 && x1 + w1 > x2 && y1 < y2 + h2 && y1 + h1 > y2;
+        }
+        canMoveTo(nx, ny) {
+            if (nx < 0 || ny < 0 || nx + this.size > RY_CANVAS_SIZE || ny + this.size > RY_CANVAS_SIZE) return false;
+            const pad = 3;
+            const left = Math.floor((nx + pad) / RY_SUB_TILE);
+            const right = Math.floor((nx + this.size - 1 - pad) / RY_SUB_TILE);
+            const top = Math.floor((ny + pad) / RY_SUB_TILE);
+            const bottom = Math.floor((ny + this.size - 1 - pad) / RY_SUB_TILE);
+            for (let gy = top; gy <= bottom; gy++) {
+                for (let gx = left; gx <= right; gx++) {
+                    const t = ryGame.grid[gy]?.[gx];
+                    if (t === RY_BRICK || t === RY_MARBLE || t === RY_WATER) return false;
+                }
+            }
+            const bx = 12 * RY_SUB_TILE, by = 24 * RY_SUB_TILE;
+            if (this.rectsOverlap(nx + pad, ny + pad, 42, 42, bx + 2, by + 2, 44, 44)) return false;
+
+            const all = [ryGame.player, ...ryGame.enemies].filter(t => t && t !== this && t.alive);
+            for (const other of all) {
+                const already = this.rectsOverlap(this.x + 4, this.y + 4, 40, 40, other.x + 4, other.y + 4, 40, 40);
+                if (!already && this.rectsOverlap(nx + 4, ny + 4, 40, 40, other.x + 4, other.y + 4, 40, 40)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        moveStep(speed) {
+            const nx = this.x + this.dir.dx * speed;
+            const ny = this.y + this.dir.dy * speed;
+            this.treadFrame = (this.treadFrame + 0.35) % 2;
+            if (this.canMoveTo(nx, ny)) {
+                this.x = nx;
+                this.y = ny;
+                return true;
+            }
+            this.x = Math.round(this.x / 2) * 2;
+            this.y = Math.round(this.y / 2) * 2;
+            return false;
+        }
+    }
+
+    class RyPlayerTank extends RyTank {
+        constructor(starTier = 0) {
+            super(4 * RY_MACRO_TILE, 12 * RY_MACRO_TILE, true);
+            this.starTier = starTier;
+            this.shieldTimer = 200;
+            this.speed = 2.4;
+            this.aiTimer = 25;
+        }
+        update() {
+            if (!this.alive) return;
+            if (this.shieldTimer > 0) this.shieldTimer--;
+            if (this.cooldown > 0) this.cooldown--;
+            if (this.recoil > 0) this.recoil *= 0.75;
+
+            if (ryGame.aiAutopilot) {
+                this.runAutopilot();
+            } else {
+                let moveDir = null;
+                if (ryKeys['ArrowUp'] || ryKeys['KeyW']) moveDir = RY_DIR.UP;
+                else if (ryKeys['ArrowDown'] || ryKeys['KeyS']) moveDir = RY_DIR.DOWN;
+                else if (ryKeys['ArrowLeft'] || ryKeys['KeyA']) moveDir = RY_DIR.LEFT;
+                else if (ryKeys['ArrowRight'] || ryKeys['KeyD']) moveDir = RY_DIR.RIGHT;
+
+                if (moveDir) {
+                    this.changeDirection(moveDir);
+                    this.moveStep(this.speed + (this.starTier >= 2 ? 0.25 : 0));
+                }
+                if (ryKeys['Space'] || ryKeys['KeyZ'] || ryKeys['KeyJ']) {
+                    this.tryFire();
+                }
+            }
+        }
+        runAutopilot() {
+            // Smart AI Autopilot for Background Attract Mode
+            const moved = this.moveStep(this.speed);
+            this.aiTimer--;
+
+            if (!moved || this.aiTimer <= 0) {
+                this.aiTimer = 24 + Math.floor(Math.random() * 35);
+                // Seek nearest powerup or active enemy
+                const target = ryGame.powerups[0] || ryGame.enemies.find(e => e.alive);
+                if (target && Math.random() < 0.7) {
+                    const dx = target.x - this.x;
+                    const dy = target.y - this.y;
+                    if (Math.abs(dx) > Math.abs(dy)) {
+                        this.changeDirection(dx > 0 ? RY_DIR.RIGHT : RY_DIR.LEFT);
+                    } else {
+                        this.changeDirection(dy > 0 ? RY_DIR.DOWN : RY_DIR.UP);
+                    }
+                } else {
+                    const choices = [RY_DIR.UP, RY_DIR.LEFT, RY_DIR.RIGHT, RY_DIR.DOWN];
+                    this.changeDirection(choices[Math.floor(Math.random() * choices.length)]);
+                }
+            }
+            // Avoid shooting downward directly at our own Golden Lotus Sanctum
+            const nearSanctumCol = (this.x >= 10 * RY_SUB_TILE && this.x <= 15 * RY_SUB_TILE);
+            const aimingAtSanctum = (this.dir === RY_DIR.DOWN && nearSanctumCol && this.y > 16 * RY_SUB_TILE);
+            if (!aimingAtSanctum && Math.random() < 0.14) {
+                this.tryFire();
+            }
+        }
+        tryFire() {
+            if (this.cooldown > 0) return;
+            const activeShots = ryGame.bullets.filter(b => b.isPlayer && b.active).length;
+            const maxShots = this.starTier >= 2 ? 2 : 1;
+            if (activeShots >= maxShots) return;
+
+            const bSpeed = this.starTier >= 1 ? 8.0 : 5.6;
+            const bx = this.x + 24 + this.dir.dx * 20;
+            const by = this.y + 24 + this.dir.dy * 20;
+            ryGame.bullets.push(new RyBullet(bx, by, this.dir, bSpeed, true, this.starTier));
+            this.cooldown = this.starTier >= 2 ? 12 : 18;
+            this.recoil = 5;
+            rySound.shoot();
+        }
+        draw(ctx) {
+            if (!this.alive) return;
+            ctx.save();
+            ctx.translate(this.x + 24, this.y + 24);
+            ctx.rotate(this.dir.angle);
+
+            ctx.fillStyle = '#27272a';
+            ctx.fillRect(-20, -21, 9, 42);
+            ctx.fillRect(11, -21, 9, 42);
+
+            ctx.fillStyle = '#d97706';
+            const off = Math.floor(this.treadFrame) * 4;
+            for (let y = -19 + off; y < 19; y += 8) {
+                ctx.fillRect(-19, y, 7, 3);
+                ctx.fillRect(12, y, 7, 3);
+            }
+
+            ctx.fillStyle = '#c2410c';
+            ctx.fillRect(-13, -17, 26, 34);
+            ctx.fillStyle = '#ff9933';
+            ctx.fillRect(-11, -15, 22, 30);
+            ctx.fillStyle = '#1e3a8a';
+            ctx.fillRect(-9, -11, 18, 22);
+
+            const rec = Math.round(this.recoil);
+            ctx.fillStyle = '#facc15';
+            ctx.fillRect(-4, -22 + rec, 8, 15);
+
+            ctx.fillStyle = '#f59e0b';
+            ctx.beginPath();
+            ctx.arc(0, 1, 9, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = '#fef08a';
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+            ctx.restore();
+
+            if (this.shieldTimer > 0) {
+                ctx.save();
+                ctx.translate(this.x + 24, this.y + 24);
+                ctx.rotate(performance.now() * 0.008);
+                ctx.strokeStyle = '#ffd700';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.arc(0, 0, 25, 0, Math.PI * 2);
+                ctx.stroke();
+                ctx.restore();
+            }
+        }
+    }
+
+    class RyEnemyTank extends RyTank {
+        constructor(x, y, typeCfg, isBonus) {
+            super(x, y, false);
+            this.type = typeCfg;
+            this.hp = typeCfg.hp;
+            this.isBonus = isBonus;
+            this.aiTimer = 35 + Math.floor(Math.random() * 40);
+        }
+        update() {
+            if (!this.alive) return;
+            if (this.recoil > 0) this.recoil *= 0.75;
+            if (this.cooldown > 0) this.cooldown--;
+            if (ryGame.freezeTimer > 0) return;
+
+            const moved = this.moveStep(this.type.speed);
+            this.aiTimer--;
+            if (!moved || this.aiTimer <= 0) {
+                this.aiTimer = 35 + Math.floor(Math.random() * 50);
+                if (Math.random() < 0.45 && (moved || this.dir !== RY_DIR.DOWN)) {
+                    this.changeDirection(RY_DIR.DOWN);
+                } else {
+                    this.changeDirection(RY_DIR_LIST[Math.floor(Math.random() * 4)]);
+                }
+            }
+            if (this.cooldown <= 0 && Math.random() < 0.055) {
+                const bx = this.x + 24 + this.dir.dx * 20;
+                const by = this.y + 24 + this.dir.dy * 20;
+                ryGame.bullets.push(new RyBullet(bx, by, this.dir, this.type.bulletSpeed, false, 0));
+                this.cooldown = this.type.fireCooldown;
+                this.recoil = 4;
+            }
+        }
+        draw(ctx) {
+            if (!this.alive) return;
+            let pal = this.type;
+            if (this.isBonus && Math.floor(performance.now() / 140) % 2 === 0) {
+                pal = { primary: '#f43f5e', secondary: '#881337', trim: '#fef08a' };
+            }
+            ctx.save();
+            ctx.translate(this.x + 24, this.y + 24);
+            ctx.rotate(this.dir.angle);
+
+            ctx.fillStyle = '#1e1b24';
+            ctx.fillRect(-20, -20, 8, 40);
+            ctx.fillRect(12, -20, 8, 40);
+
+            ctx.fillStyle = pal.secondary;
+            ctx.fillRect(-13, -17, 26, 34);
+            ctx.fillStyle = pal.primary;
+            ctx.fillRect(-11, -15, 22, 30);
+
+            const rec = Math.round(this.recoil);
+            ctx.fillStyle = pal.trim;
+            if (this.type.key === 'GAJA') {
+                ctx.fillRect(-8, -23 + rec, 3, 9);
+                ctx.fillRect(5, -23 + rec, 3, 9);
+                ctx.fillRect(-4, -21 + rec, 8, 13);
+            } else if (this.type.key === 'SIEGE') {
+                ctx.fillRect(-5, -22 + rec, 3, 14);
+                ctx.fillRect(2, -22 + rec, 3, 14);
+            } else {
+                ctx.fillRect(-3, -21 + rec, 6, 13);
+            }
+
+            ctx.fillStyle = pal.secondary;
+            ctx.beginPath();
+            ctx.arc(0, 1, 8, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = pal.trim;
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+            ctx.restore();
+        }
+    }
+
+    class RyGameEngine {
+        constructor() {
+            this.canvas = document.getElementById('bgTankCanvas');
+            this.ctx = this.canvas.getContext('2d');
+            this.aiAutopilot = true;
+            this.paused = false;
+            this.stageIdx = 0;
+            this.score = 0;
+            this.lives = 3;
+            this.savedStarTier = 1;
+            this.grid = [];
+            this.player = null;
+            this.enemies = [];
+            this.bullets = [];
+            this.particles = [];
+            this.powerups = [];
+            this.spawnEffects = [];
+            this.enemiesRemainingToSpawn = 20;
+            this.spawnCooldown = 40;
+            this.nextSpawnSlot = 0;
+            this.freezeTimer = 0;
+            this.shovelTimer = 0;
+            this.baseDestroyed = false;
+            this.tick = 0;
+            this.bannerTimer = 0;
+
+            this.initWingStageButtons();
+            this.loadStage(0);
+        }
+        initWingStageButtons() {
+            const box = document.getElementById('bgWingStageButtons');
+            if (!box) return;
+            box.innerHTML = '';
+            RY_STAGES.forEach((st, idx) => {
+                const b = document.createElement('button');
+                b.className = 'win-btn';
+                b.style.fontSize = '10px';
+                b.textContent = `Stage ${String(st.id).padStart(2, '0')}`;
+                b.onclick = () => changeTankStage(idx);
+                box.appendChild(b);
+            });
+        }
+        loadStage(idx) {
+            this.stageIdx = idx % RY_STAGES.length;
+            const st = RY_STAGES[this.stageIdx];
+            const sel = document.getElementById('taskbarStageSelect');
+            if (sel) sel.value = String(this.stageIdx);
+
+            this.grid = Array.from({ length: RY_SUB_GRID }, () => Array(RY_SUB_GRID).fill(RY_EMPTY));
+            for (let my = 0; my < RY_MACRO_GRID; my++) {
+                const tokens = st.map[my].trim().split(/\s+/);
+                for (let mx = 0; mx < RY_MACRO_GRID; mx++) {
+                    const ch = tokens[mx] || '.';
+                    let t = RY_EMPTY;
+                    if (ch === 'B') t = RY_BRICK;
+                    else if (ch === 'M') t = RY_MARBLE;
+                    else if (ch === 'C') t = RY_CANOPY;
+                    else if (ch === 'W') t = RY_WATER;
+                    else if (ch === 'I') t = RY_ICE;
+                    const sx = mx * 2, sy = my * 2;
+                    this.grid[sy][sx] = t;
+                    this.grid[sy][sx + 1] = t;
+                    this.grid[sy + 1][sx] = t;
+                    this.grid[sy + 1][sx + 1] = t;
+                }
+            }
+            this.buildSanctumWalls(RY_BRICK);
+            this.player = new RyPlayerTank(this.savedStarTier);
+            this.enemies = [];
+            this.bullets = [];
+            this.particles = [];
+            this.powerups = [];
+            this.spawnEffects = [];
+            this.enemiesRemainingToSpawn = 20;
+            this.spawnCooldown = 35;
+            this.freezeTimer = 0;
+            this.shovelTimer = 0;
+            this.baseDestroyed = false;
+            this.bannerTimer = 110;
+            this.updateTaskbarHUD();
+        }
+        buildSanctumWalls(tType) {
+            const coords = [
+                [11, 23], [12, 23], [13, 23], [14, 23],
+                [11, 24],                     [14, 24],
+                [11, 25],                     [14, 25]
+            ];
+            for (const [gx, gy] of coords) this.grid[gy][gx] = tType;
+            this.grid[24][12] = RY_EMPTY;
+            this.grid[24][13] = RY_EMPTY;
+            this.grid[25][12] = RY_EMPTY;
+            this.grid[25][13] = RY_EMPTY;
+        }
+        spawnSparks(x, y, color, count = 8) {
+            for (let i = 0; i < count; i++) {
+                const a = Math.random() * Math.PI * 2;
+                const s = 1 + Math.random() * 3.5;
+                this.particles.push({
+                    x, y, vx: Math.cos(a) * s, vy: Math.sin(a) * s,
+                    size: 3 + Math.random() * 4, color, life: 18, maxLife: 18
+                });
+            }
+        }
+        destroyBase() {
+            this.baseDestroyed = true;
+            rySound.explosion(true);
+            this.spawnSparks(13 * RY_SUB_TILE, 25 * RY_SUB_TILE, '#ff4444', 28);
+            setTimeout(() => this.loadStage(this.stageIdx), 1800);
+        }
+        spawnPowerup() {
+            const p = RY_PWR_TYPES[Math.floor(Math.random() * RY_PWR_TYPES.length)];
+            const px = (1 + Math.floor(Math.random() * 11)) * RY_MACRO_TILE;
+            const py = (1 + Math.floor(Math.random() * 10)) * RY_MACRO_TILE;
+            this.powerups.push({ ...p, x: px, y: py, timer: 600 });
+        }
+        applyPowerup(p) {
+            rySound.powerup();
+            this.score += 500;
+            if (p.id === 'SHIELD') this.player.shieldTimer = 500;
+            else if (p.id === 'STAR') {
+                this.player.starTier = Math.min(3, this.player.starTier + 1);
+                this.savedStarTier = this.player.starTier;
+            } else if (p.id === 'BOMB') {
+                this.enemies.forEach(e => {
+                    if (e.alive) {
+                        e.alive = false;
+                        this.score += e.type.score;
+                        this.spawnSparks(e.x + 24, e.y + 24, '#ffd700', 18);
+                    }
+                });
+                rySound.explosion(true);
+            } else if (p.id === 'FREEZE') this.freezeTimer = 500;
+            else if (p.id === 'SHOVEL') {
+                this.shovelTimer = 900;
+                this.buildSanctumWalls(RY_MARBLE);
+            } else if (p.id === 'LIFE') this.lives++;
+            this.updateTaskbarHUD();
+        }
+        update() {
+            this.tick++;
+            if (this.paused) return;
+            if (this.bannerTimer > 0) this.bannerTimer--;
+            if (this.freezeTimer > 0) this.freezeTimer--;
+            if (this.shovelTimer > 0) {
+                this.shovelTimer--;
+                if (this.shovelTimer === 0) this.buildSanctumWalls(RY_BRICK);
+            }
+
+            // Spawn Enemy Rathas
+            for (let i = this.spawnEffects.length - 1; i >= 0; i--) {
+                const fx = this.spawnEffects[i];
+                fx.timer--;
+                if (fx.timer <= 0) {
+                    const weights = RY_STAGES[this.stageIdx].weights;
+                    const r = Math.random();
+                    let acc = 0, chosen = RY_ENEMY_TYPES.SCOUT;
+                    for (const k of ['SCOUT', 'STRIKER', 'SIEGE', 'GAJA']) {
+                        acc += weights[k];
+                        if (r <= acc) { chosen = RY_ENEMY_TYPES[k]; break; }
+                    }
+                    const isBonus = (this.enemiesRemainingToSpawn % 4 === 1);
+                    this.enemies.push(new RyEnemyTank(fx.x, fx.y, chosen, isBonus));
+                    this.spawnEffects.splice(i, 1);
+                }
+            }
+
+            if (this.enemiesRemainingToSpawn > 0) {
+                const active = this.enemies.filter(e => e.alive).length + this.spawnEffects.length;
+                if (active < 4) {
+                    this.spawnCooldown--;
+                    if (this.spawnCooldown <= 0) {
+                        const cols = [0, 6, 12];
+                        const sx = cols[this.nextSpawnSlot % 3] * RY_MACRO_TILE;
+                        this.nextSpawnSlot++;
+                        this.spawnEffects.push({ x: sx, y: 0, timer: 36 });
+                        this.enemiesRemainingToSpawn--;
+                        this.spawnCooldown = 75;
+                        this.updateTaskbarHUD();
+                    }
+                }
+            }
+
+            if (this.player && this.player.alive) this.player.update();
+            for (const e of this.enemies) if (e.alive) e.update();
+
+            // Update Bullets
+            for (let i = 0; i < this.bullets.length; i++) {
+                const b = this.bullets[i];
+                if (!b.active) continue;
+                b.update();
+                if (!b.active) continue;
+
+                if (b.isPlayer) {
+                    for (const e of this.enemies) {
+                        if (!e.alive) continue;
+                        if (b.x >= e.x + 3 && b.x <= e.x + 45 && b.y >= e.y + 3 && b.y <= e.y + 45) {
+                            b.active = false;
+                            if (e.isBonus) { e.isBonus = false; this.spawnPowerup(); }
+                            e.hp--;
+                            if (e.hp <= 0) {
+                                e.alive = false;
+                                this.score += e.type.score;
+                                rySound.explosion(true);
+                                this.spawnSparks(e.x + 24, e.y + 24, '#ffd700', 18);
+                                this.updateTaskbarHUD();
+                            } else {
+                                this.spawnSparks(b.x, b.y, '#fde047', 6);
+                            }
+                            break;
+                        }
+                    }
+                } else if (this.player && this.player.alive) {
+                    if (b.x >= this.player.x + 4 && b.x <= this.player.x + 44 &&
+                        b.y >= this.player.y + 4 && b.y <= this.player.y + 44) {
+                        b.active = false;
+                        if (this.player.shieldTimer > 0) {
+                            this.spawnSparks(b.x, b.y, '#ffd700', 6);
+                        } else {
+                            this.player.alive = false;
+                            rySound.explosion(true);
+                            this.spawnSparks(this.player.x + 24, this.player.y + 24, '#ff9933', 20);
+                            if (!this.aiAutopilot) {
+                                this.lives = Math.max(1, this.lives - 1);
+                            }
+                            this.updateTaskbarHUD();
+                            setTimeout(() => {
+                                this.player = new RyPlayerTank(this.aiAutopilot ? 1 : 0);
+                                this.updateTaskbarHUD();
+                            }, 900);
+                        }
+                    }
+                }
+            }
+            this.bullets = this.bullets.filter(b => b.active);
+
+            // Powerups
+            for (let i = this.powerups.length - 1; i >= 0; i--) {
+                const p = this.powerups[i];
+                p.timer--;
+                if (p.timer <= 0) { this.powerups.splice(i, 1); continue; }
+                if (this.player && this.player.alive &&
+                    this.player.rectsOverlap(this.player.x, this.player.y, 48, 48, p.x, p.y, 48, 48)) {
+                    this.applyPowerup(p);
+                    this.powerups.splice(i, 1);
+                }
+            }
+
+            // Particles
+            for (let i = this.particles.length - 1; i >= 0; i--) {
+                const pt = this.particles[i];
+                pt.x += pt.vx;
+                pt.y += pt.vy;
+                pt.life--;
+                if (pt.life <= 0) this.particles.splice(i, 1);
+            }
+
+            // Stage Progression
+            const aliveEnemies = this.enemies.filter(e => e.alive).length;
+            if (this.enemiesRemainingToSpawn === 0 && this.spawnEffects.length === 0 && aliveEnemies === 0 && !this.baseDestroyed) {
+                this.loadStage((this.stageIdx + 1) % RY_STAGES.length);
+            }
+        }
+        updateTaskbarHUD() {
+            const sc = document.getElementById('tbScore');
+            const lv = document.getElementById('tbLives');
+            const st = document.getElementById('tbStars');
+            const hs = document.getElementById('tbHostiles');
+            if (sc) sc.textContent = String(this.score).padStart(6, '0');
+            if (lv) lv.textContent = this.lives;
+            const tier = this.player ? this.player.starTier : this.savedStarTier;
+            if (st) st.textContent = '★'.repeat(tier) + '☆'.repeat(3 - tier);
+            const rem = this.enemiesRemainingToSpawn + this.spawnEffects.length + this.enemies.filter(e => e.alive).length;
+            if (hs) hs.textContent = rem;
+
+            const wingBuffs = document.getElementById('bgWingBuffs');
+            if (wingBuffs) {
+                const lines = [];
+                lines.push(this.aiAutopilot ? '🤖 AI AUTOPILOT: ON' : '🎮 1P MANUAL: ON');
+                if (this.player && this.player.shieldTimer > 0) lines.push('☸ CHAKRA SHIELD');
+                if (this.freezeTimer > 0) lines.push('⏳ KALA FREEZE');
+                if (this.shovelTimer > 0) lines.push('🧱 MARBLE SANCTUM');
+                wingBuffs.innerHTML = lines.join('<br>');
+            }
+        }
+        draw() {
+            const ctx = this.ctx;
+            const st = RY_STAGES[this.stageIdx];
+            ctx.fillStyle = st.bgTint;
+            ctx.fillRect(0, 0, RY_CANVAS_SIZE, RY_CANVAS_SIZE);
+
+            // Grid tiles
+            for (let gy = 0; gy < RY_SUB_GRID; gy++) {
+                for (let gx = 0; gx < RY_SUB_GRID; gx++) {
+                    const t = this.grid[gy][gx];
+                    if (!t || t === RY_CANOPY) continue;
+                    const px = gx * RY_SUB_TILE, py = gy * RY_SUB_TILE;
+                    if (t === RY_BRICK) {
+                        ctx.fillStyle = '#7c2d12';
+                        ctx.fillRect(px, py, RY_SUB_TILE, RY_SUB_TILE);
+                        ctx.fillStyle = '#c85a32';
+                        ctx.fillRect(px + 1, py + 1, RY_SUB_TILE - 2, 10);
+                        ctx.fillRect(px + 1, py + 13, 10, 10);
+                        ctx.fillRect(px + 13, py + 13, 10, 10);
+                    } else if (t === RY_MARBLE) {
+                        ctx.fillStyle = '#64748b';
+                        ctx.fillRect(px, py, RY_SUB_TILE, RY_SUB_TILE);
+                        ctx.fillStyle = '#f1f5f9';
+                        ctx.fillRect(px + 2, py + 2, RY_SUB_TILE - 4, RY_SUB_TILE - 4);
+                        ctx.fillStyle = '#eab308';
+                        ctx.fillRect(px + 9, py + 9, 6, 6);
+                    } else if (t === RY_WATER) {
+                        ctx.fillStyle = '#0369a1';
+                        ctx.fillRect(px, py, RY_SUB_TILE, RY_SUB_TILE);
+                        ctx.fillStyle = '#38bdf8';
+                        ctx.fillRect(px + 4, py + 8 + Math.sin(this.tick * 0.08 + gx) * 2, 14, 2);
+                    } else if (t === RY_ICE) {
+                        ctx.fillStyle = (gx + gy) % 2 === 0 ? '#cbd5e1' : '#94a3b8';
+                        ctx.fillRect(px, py, RY_SUB_TILE, RY_SUB_TILE);
+                    }
+                }
+            }
+
+            // Golden Lotus Sanctum Base
+            const bx = 12 * RY_SUB_TILE, by = 24 * RY_SUB_TILE;
+            ctx.fillStyle = '#451a03';
+            ctx.fillRect(bx, by, RY_MACRO_TILE, RY_MACRO_TILE);
+            ctx.strokeStyle = '#ffd700';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(bx + 2, by + 2, RY_MACRO_TILE - 4, RY_MACRO_TILE - 4);
+
+            ctx.save();
+            ctx.translate(bx + 24, by + 24);
+            ctx.rotate(this.tick * 0.03);
+            ctx.fillStyle = this.baseDestroyed ? '#ef4444' : '#ffd700';
+            ctx.beginPath();
+            ctx.arc(0, 0, 12, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+
+            // Spawn Portals
+            for (const fx of this.spawnEffects) {
+                ctx.strokeStyle = '#fde047';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(fx.x + 8, fx.y + 8, 32, 32);
+            }
+
+            if (this.player) this.player.draw(ctx);
+            for (const e of this.enemies) e.draw(ctx);
+            for (const b of this.bullets) b.draw(ctx);
+
+            // Canopy Layer
+            for (let gy = 0; gy < RY_SUB_GRID; gy++) {
+                for (let gx = 0; gx < RY_SUB_GRID; gx++) {
+                    if (this.grid[gy][gx] === RY_CANOPY) {
+                        const px = gx * RY_SUB_TILE, py = gy * RY_SUB_TILE;
+                        ctx.fillStyle = 'rgba(22, 163, 74, 0.85)';
+                        ctx.fillRect(px + 1, py + 1, RY_SUB_TILE - 2, RY_SUB_TILE - 2);
+                        ctx.fillStyle = '#4ade80';
+                        ctx.fillRect(px + 6, py + 6, 5, 5);
+                    }
+                }
+            }
+
+            // Powerups
+            for (const p of this.powerups) {
+                ctx.fillStyle = p.bg;
+                ctx.fillRect(p.x + 4, p.y + 4, 40, 40);
+                ctx.strokeStyle = p.color;
+                ctx.lineWidth = 2;
+                ctx.strokeRect(p.x + 4, p.y + 4, 40, 40);
+                ctx.fillStyle = '#ffffff';
+                ctx.font = 'bold 18px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText(p.symbol, p.x + 24, p.y + 30);
+            }
+
+            // Particles
+            for (const pt of this.particles) {
+                ctx.fillStyle = pt.color;
+                ctx.fillRect(pt.x, pt.y, pt.size, pt.size);
+            }
+
+            // Stage Banner Overlay
+            if (this.bannerTimer > 0) {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.72)';
+                ctx.fillRect(90, 260, 444, 90);
+                ctx.strokeStyle = '#ffd700';
+                ctx.lineWidth = 3;
+                ctx.strokeRect(90, 260, 444, 90);
+                ctx.fillStyle = '#ffff00';
+                ctx.font = 'bold 16px Courier New, monospace';
+                ctx.textAlign = 'center';
+                ctx.fillText(`STAGE ${String(st.id).padStart(2, '0')} / 10: ${st.name.toUpperCase()}`, RY_CANVAS_SIZE / 2, 298);
+                ctx.fillStyle = '#00ffff';
+                ctx.font = 'bold 12px Tahoma, sans-serif';
+                ctx.fillText(this.aiAutopilot ? 'AI AUTOPILOT ACTIVE — PRESS ARROW KEYS OR CLICK 1P TO PLAY!' : '1P MANUAL TANK COMMAND ACTIVE!', RY_CANVAS_SIZE / 2, 326);
+            }
+        }
+    }
+
+    let ryGame = null;
+
+    function toggleTankControlMode(forceAutopilot = null) {
+        if (!ryGame) return;
+        ryGame.aiAutopilot = (forceAutopilot !== null) ? forceAutopilot : !ryGame.aiAutopilot;
+        const btn = document.getElementById('btnTaskbarControlMode');
+        if (btn) {
+            if (ryGame.aiAutopilot) {
+                btn.textContent = '🤖 MODE: AI AUTOPILOT (CLICK FOR 1P)';
+                btn.className = 'win-btn win-btn-yellow';
+            } else {
+                btn.textContent = '🎮 MODE: 1P MANUAL (WASD/ARROWS + SPACE)';
+                btn.className = 'win-btn win-btn-green';
+            }
+        }
+        ryGame.updateTaskbarHUD();
+    }
+
+    function changeTankStage(stageIdx) {
+        if (!ryGame) return;
+        ryGame.loadStage( parseInt(stageIdx, 10) || 0 );
+    }
+
+    function toggleTankSfx() {
+        rySound.sfxEnabled = !rySound.sfxEnabled;
+        const btn = document.getElementById('btnTbSfx');
+        if (btn) btn.textContent = rySound.sfxEnabled ? '🔊 SFX: ON' : '🔇 SFX: OFF';
+    }
+
+    function toggleTankMusic() {
+        rySound.musicEnabled = !rySound.musicEnabled;
+        const btn = document.getElementById('btnTbMusic');
+        if (btn) btn.textContent = rySound.musicEnabled ? '🎵 RAGA: ON' : '🔇 RAGA: OFF';
+        if (rySound.musicEnabled) rySound.startRaga();
+        else rySound.stopRaga();
+    }
+
+    function toggleTankPause() {
+        if (!ryGame) return;
+        ryGame.paused = !ryGame.paused;
+        const btn = document.getElementById('btnTbPause');
+        if (btn) btn.textContent = ryGame.paused ? '▶ RESUME' : '⏯ PAUSE';
+    }
+
+    // Keyboard listener that respects input/textarea/select focus
+    window.addEventListener('keydown', (e) => {
+        const tag = (document.activeElement && document.activeElement.tagName) || '';
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+
+        ryKeys[e.code] = true;
+        if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.code)) {
+            if (ryGame && ryGame.aiAutopilot) {
+                toggleTankControlMode(false);
+            }
+            const wrapper = document.getElementById('mainPortalWrapper');
+            if (wrapper && wrapper.classList.contains('portal-minimized')) {
+                e.preventDefault();
+            }
+        }
+        if (e.code === 'Space' && ryGame && !ryGame.aiAutopilot) {
+            e.preventDefault();
+        }
+        if (e.code === 'KeyP' && ryGame) {
+            toggleTankPause();
+        }
+    });
+
+    window.addEventListener('keyup', (e) => {
+        ryKeys[e.code] = false;
+    });
+
+    // INITIALIZE PORTAL & BACKGROUND TANK MINIGAME ON LOAD
+    window.addEventListener('DOMContentLoaded', () => {
+        renderBatchTable();
+        renderSyntaxTables();
+        selectPuttyEnv('cisco');
+
+        ryGame = new RyGameEngine();
+        function bgLoop() {
+            ryGame.update();
+            ryGame.draw();
+            requestAnimationFrame(bgLoop);
+        }
+        bgLoop();
+    });
+</script>
+</body>
+</html>
