@@ -957,12 +957,12 @@
             <div id="batch-schedule">
                 <div class="section-bar-blue">
                     <div>
-                        📅 NEW ONLINE BATCHES &amp; 1-ON-1 TUTORING SCHEDULE (FACULTY: MR. JOSH)
+                        📅 NEW ONLINE BATCHES &amp; 1-ON-1 TUTORING SCHEDULE (FACULTY: MR. JOSH &amp; TEAM)
                     </div>
                     <div style="display:flex; gap:4px; align-items:center;">
                         <span style="font-size:11px; color:#ffff00;">Filter Track:</span>
                         <select id="batchFilterSelect" class="classic-input" style="font-size:11px; padding:1px 4px;" onchange="renderBatchTable()">
-                            <option value="ALL">-- All Tracks (8 Batches) --</option>
+                            <option value="ALL">-- All Tracks (10 Batches) --</option>
                             <option value="CISCO">Cisco Switch Syntax &amp; Troubleshooting</option>
                             <option value="LINUX">Linux Tutorials &amp; Kernel Rescue</option>
                             <option value="PALOALTO">Palo Alto Cloud Security &amp; PAN-OS</option>
@@ -1419,7 +1419,7 @@
         {
             sno: "10",
             track: "PALOALTO",
-            course: "PaloAlto Strata Cloud Manager Tutorial and Security Management Training ",
+            course: "PaloAlto Strata Cloud Manager Tutorial and Security Management Training",
             badge: "ON-DEMAND",
             faculty: "Mr. Dumanpatel Singh",
             date: "Flexible",
@@ -1676,7 +1676,11 @@
 
     // RENDER DURGASOFT BATCH SCHEDULE TABLE
     function renderBatchTable() {
-        const filterVal = document.getElementById('batchFilterSelect').value;
+        const selectEl = document.getElementById('batchFilterSelect');
+        if (selectEl && selectEl.options.length > 0) {
+            selectEl.options[0].textContent = `-- All Tracks (${BATCH_ROWS.length} Batches) --`;
+        }
+        const filterVal = selectEl ? selectEl.value : 'ALL';
         const tbody = document.getElementById('batchTableBody');
         tbody.innerHTML = '';
 
@@ -2012,7 +2016,6 @@
             minHeader.style.display = 'flex';
             document.getElementById('btnViewMin').classList.add('win-btn-yellow');
         } else {
-            // 100% solid
             minHeader.style.display = 'none';
             document.getElementById('btnViewSolid').classList.add('win-btn-yellow');
         }
@@ -2515,13 +2518,11 @@
             }
         }
         runAutopilot() {
-            // Smart AI Autopilot for Background Attract Mode
             const moved = this.moveStep(this.speed);
             this.aiTimer--;
 
             if (!moved || this.aiTimer <= 0) {
                 this.aiTimer = 24 + Math.floor(Math.random() * 35);
-                // Seek nearest powerup or active enemy
                 const target = ryGame.powerups[0] || ryGame.enemies.find(e => e.alive);
                 if (target && Math.random() < 0.7) {
                     const dx = target.x - this.x;
@@ -2536,7 +2537,6 @@
                     this.changeDirection(choices[Math.floor(Math.random() * choices.length)]);
                 }
             }
-            // Avoid shooting downward directly at our own Golden Lotus Sanctum
             const nearSanctumCol = (this.x >= 10 * RY_SUB_TILE && this.x <= 15 * RY_SUB_TILE);
             const aimingAtSanctum = (this.dir === RY_DIR.DOWN && nearSanctumCol && this.y > 16 * RY_SUB_TILE);
             if (!aimingAtSanctum && Math.random() < 0.14) {
@@ -2831,7 +2831,6 @@
                 if (this.shovelTimer === 0) this.buildSanctumWalls(RY_BRICK);
             }
 
-            // Spawn Enemy Rathas
             for (let i = this.spawnEffects.length - 1; i >= 0; i--) {
                 const fx = this.spawnEffects[i];
                 fx.timer--;
@@ -2868,7 +2867,6 @@
             if (this.player && this.player.alive) this.player.update();
             for (const e of this.enemies) if (e.alive) e.update();
 
-            // Update Bullets
             for (let i = 0; i < this.bullets.length; i++) {
                 const b = this.bullets[i];
                 if (!b.active) continue;
@@ -2918,7 +2916,6 @@
             }
             this.bullets = this.bullets.filter(b => b.active);
 
-            // Powerups
             for (let i = this.powerups.length - 1; i >= 0; i--) {
                 const p = this.powerups[i];
                 p.timer--;
@@ -2930,7 +2927,6 @@
                 }
             }
 
-            // Particles
             for (let i = this.particles.length - 1; i >= 0; i--) {
                 const pt = this.particles[i];
                 pt.x += pt.vx;
@@ -2939,7 +2935,6 @@
                 if (pt.life <= 0) this.particles.splice(i, 1);
             }
 
-            // Stage Progression
             const aliveEnemies = this.enemies.filter(e => e.alive).length;
             if (this.enemiesRemainingToSpawn === 0 && this.spawnEffects.length === 0 && aliveEnemies === 0 && !this.baseDestroyed) {
                 this.loadStage((this.stageIdx + 1) % RY_STAGES.length);
@@ -2973,7 +2968,6 @@
             ctx.fillStyle = st.bgTint;
             ctx.fillRect(0, 0, RY_CANVAS_SIZE, RY_CANVAS_SIZE);
 
-            // Grid tiles
             for (let gy = 0; gy < RY_SUB_GRID; gy++) {
                 for (let gx = 0; gx < RY_SUB_GRID; gx++) {
                     const t = this.grid[gy][gx];
@@ -3005,7 +2999,6 @@
                 }
             }
 
-            // Golden Lotus Sanctum Base
             const bx = 12 * RY_SUB_TILE, by = 24 * RY_SUB_TILE;
             ctx.fillStyle = '#451a03';
             ctx.fillRect(bx, by, RY_MACRO_TILE, RY_MACRO_TILE);
@@ -3022,7 +3015,6 @@
             ctx.fill();
             ctx.restore();
 
-            // Spawn Portals
             for (const fx of this.spawnEffects) {
                 ctx.strokeStyle = '#fde047';
                 ctx.lineWidth = 2;
@@ -3033,7 +3025,6 @@
             for (const e of this.enemies) e.draw(ctx);
             for (const b of this.bullets) b.draw(ctx);
 
-            // Canopy Layer
             for (let gy = 0; gy < RY_SUB_GRID; gy++) {
                 for (let gx = 0; gx < RY_SUB_GRID; gx++) {
                     if (this.grid[gy][gx] === RY_CANOPY) {
@@ -3046,7 +3037,6 @@
                 }
             }
 
-            // Powerups
             for (const p of this.powerups) {
                 ctx.fillStyle = p.bg;
                 ctx.fillRect(p.x + 4, p.y + 4, 40, 40);
@@ -3059,13 +3049,11 @@
                 ctx.fillText(p.symbol, p.x + 24, p.y + 30);
             }
 
-            // Particles
             for (const pt of this.particles) {
                 ctx.fillStyle = pt.color;
                 ctx.fillRect(pt.x, pt.y, pt.size, pt.size);
             }
 
-            // Stage Banner Overlay
             if (this.bannerTimer > 0) {
                 ctx.fillStyle = 'rgba(0, 0, 0, 0.72)';
                 ctx.fillRect(90, 260, 444, 90);
@@ -3103,7 +3091,7 @@
 
     function changeTankStage(stageIdx) {
         if (!ryGame) return;
-        ryGame.loadStage( parseInt(stageIdx, 10) || 0 );
+        ryGame.loadStage(parseInt(stageIdx, 10) || 0);
     }
 
     function toggleTankSfx() {
@@ -3127,7 +3115,6 @@
         if (btn) btn.textContent = ryGame.paused ? '▶ RESUME' : '⏯ PAUSE';
     }
 
-    // Keyboard listener that respects input/textarea/select focus
     window.addEventListener('keydown', (e) => {
         const tag = (document.activeElement && document.activeElement.tagName) || '';
         if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
